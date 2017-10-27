@@ -5,7 +5,7 @@
 Since I've been learning web development for a little over a year, I'm not completely new to this. Sure, I'm still a student seeking a junior web developer job, but compared to a year ago I'm not completely lost. 
 
 ### Binary
-Professor David J. Malan first covers binary numbers, which I already knew, but I did find out bit stands for binary digits, so 8-bit means 8-binary-digits which would have a value between 0 and 256 **(I think)*.  
+Professor David J. Malan first covers binary numbers, which I already knew, but I did find out bit stands for binary digits, so 8-bit means 8-binary-digits which would have a value between 0 and 256 *(I think)*.  
 Computers have a finite number of bits.
 #### ASCII and RGB
 ASCII is a way to represent binary numbers as human numbers into characters. So the binary value for 72 represents the letter H. RGB is similar, except it turns those human numbers into colors, and they range from 0 to 255.
