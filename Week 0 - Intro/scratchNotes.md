@@ -7,12 +7,12 @@
 - Sprites can be chosen in the program, built, or uploaded
 - Costumes alter sprite appearance according to conditions
 
---
+---
 
 #### Stages are a background, which are also chosen from the program, built, or uploaded.
 
 
---
+---
 
 ### Scratch Programming
 
