@@ -20,8 +20,8 @@ The first topic covered is the command line. I'm already familiar with some basi
 
 C requires variables to be typed before a value can be assigned. This is different from Javascript which doesn't require any typing beforehand. By default C comes with the integer, char, float, and double value types. Types like strings and booleans need to be included before the source code. In the CS50 lecture they include a library so C can read strings and booleans.
 
-**INT** can hold 4bytes(32bits, that is 32 binary digits) of data. The number range is between approximiately -1billion and 1billion.  
-*If unsigned integers are used, the range becomes 0 to about 4billion, so the positive range becomes 8 bytes at the expense of no negative values.*   
+**INT** can hold 4bytes(32bits, that is 32 binary digits) of data. The number range is between approximiately -(2^16 -1) and 2^16 -1.  
+*If unsigned integers are used, the range becomes 0 to 2^32, so the positive range can hold twice as many bytes at the expense of negative values.*   
 **CHAR** can hold 1byte, which gives a range of -127 to 127. These numerical values are used to represent single keyboard characters.  
 **FLOAT** is used for decimal values, also 4 bytes of data. However, they need to take the integer value as well as the decimal value into account, so it's impossible to have a value of 1billion with 1billion decimal places. Floats are used for very accurate decimal values.  
 **DOUBLE** hold 8 bytes and are used for very long numbers.
