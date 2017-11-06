@@ -18,12 +18,12 @@ The first topic covered is the command line. I'm already familiar with some basi
 
 ## Data Types
 
-C requires variables to be typed before a value can be assigned. This is different from Javascript which doesn't require any typing beforehand. By default C comes with the integer, char, float, and double value types. Types like strings and booleans need to be included before the source code. In the CS50 lecture they include a file so C can read strings and booleans.
+C requires variables to be typed before a value can be assigned. This is different from Javascript which doesn't require any typing beforehand. By default C comes with the integer, char, float, and double value types. Types like strings and booleans need to be included before the source code. In the CS50 lecture they include a library so C can read strings and booleans.
 
 **INT** can hold 4bytes(32bits, that is 32 binary digits) of data. The number range is between approximiately -1billion and 1billion.  
 *If unsigned integers are used, the range becomes 0 to about 4billion, so the positive range becomes 8 bytes at the expense of no negative values.*   
 **CHAR** can hold 1byte, which gives a range of -127 to 127. These numerical values are used to represent single keyboard characters.  
-**FLOAT** is used for decimal values, also 4 bytes of data. However, they need to take the integer value as well as the decimal value into account, so it's impossible to have a value of 1billion.1billion decimal places. Floats are used for very accurate decimal values.  
+**FLOAT** is used for decimal values, also 4 bytes of data. However, they need to take the integer value as well as the decimal value into account, so it's impossible to have a value of 1billion with 1billion decimal places. Floats are used for very accurate decimal values.  
 **DOUBLE** hold 8 bytes and are used for very long numbers.
 
 **BOOLEAN** is used for true/false values.
@@ -57,12 +57,13 @@ Booleans are used to compare values, if a value is true/false, run this code. Wh
 
 ### Logical Operators
 These operators run conditions whether a value is true or false.
+
 * **&&** The And operator, which does something if both values are true. If one value is false or if both values are false, it doesn't run.
-* **||** The Or operator, which runs code if at least one value is true. IF both values are true the code will run, but if both values are false it won't run.
+* **||** The Or operator, which runs code if at least one value is true. If both values are true the code will run, but if both values are false it won't run.
 * **!** Is an inversion or the Not operator. The code runs if the condition is inverted.
 
 ### Relational Operators
-These are basically less than (or equal to), greater than (or equal to), equality (represented as ==), or inequality (represented as !=)
+These are basically less than < (or equal to <=), greater than > (or equal to >= ), equality (represented as ==), or inequality (represented as !=)
 
 
 ## Conditionals
@@ -78,7 +79,7 @@ The condition will be checked in the If statements until a condition is met. Onc
 Switch is similar to If/Else except it checks for cases rather than "conditions." Breaks must be put in between each case or every piece of code will run for every single case. There's also a default case for switch statements if a condition isn't met.
 
 ### Ternary Operator
-This is basically a condensed version of an If/Else statement, that only checks on condition. The syntax is confusing, but it saves space.  
+This is basically a condensed version of an If/Else statement, that only checks one condition. The syntax is confusing, but it saves space.  
 It's typically written as x ? a : b. Which means if the a condition applies to x to run a, else run b. It's not necessary to write ternary operators, but they appear in real code.
 
 ## Loops
@@ -88,7 +89,7 @@ Loops are used to repeat code. Instead of writing the same statement multiple ti
 While the condition is true, run this loop, but if the condition ever becomes false, stop the loop. This can theoretically go on forever unless a break is put into the loop. While loops are used when the length is unknown and you're not sure if the user will ever activate the code to run them.
 
 ### Do While Loop
-Similar to the While Loop, except it runs once, checks the condition, and runs the loop or stops depending if the conditions is met or not. Do While is used if you want the code to run at least once, but you're not sure if there will be any repetition.
+Similar to the While Loop, except it runs once, checks the condition, and runs the loop or stops depending if the condition is met or not. Do While is used if you want the code to run at least once, but you're not sure if there will be any repetition.
 
 ### For Loop
 For loops are the most advanced of loops. A for loop sets a condition, sets a length, and also sets an incrementation. If the condition is true, run this loop for x amount of times, and increment it for x amount of times.  
