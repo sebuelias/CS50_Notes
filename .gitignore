@@ -1,5 +1,10 @@
 <<<<<<< HEAD
 *.backup
+<<<<<<< HEAD
 =======
 *.backup
+>>>>>>> Week1_CLang
+=======
+*.exe
+*.obj
 >>>>>>> Week1_CLang
