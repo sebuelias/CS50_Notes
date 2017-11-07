@@ -2,7 +2,10 @@
 #include <cs50.h>
 
 int main(void) {
+	//user enters number of minutes in shower
+    printf("Minutes: ");
     int minutes = get_int();
-    printf("Minutes %i \n", minutes);
+
+    //amount of 16 ounce bottles filled
     printf("Bottles: %i\n", minutes * 12);
 }
