@@ -2,10 +2,13 @@
 #include <cs50.h>
 
 int main(void) {
-	//user enters number of minutes in shower
-    printf("Minutes: ");
-    int minutes = get_int();
+    int minutes;
+    //do while checks for user input, if number is positive it stop, if negative the loop runs
+    do { 
+        printf("Minutes: ");
+        minutes = get_int();
+    }
+    while(minutes < 0); //if user input is a negative value, run loop
 
-    //amount of 16 ounce bottles filled
     printf("Bottles: %i\n", minutes * 12);
 }
