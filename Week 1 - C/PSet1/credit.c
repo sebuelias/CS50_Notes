@@ -14,28 +14,35 @@ int main(void) {
 
     //makes sure number entered is positive
     do {
-        printf("Number: ");
+        printf("Number: \n");
         cred = get_long_long();
     } while(cred < 0);
 
-    if(cred >= 4000000000000 && cred < 50000000000000) {
-        digit = cred % 100;
-        digit /= 10;
-        cred /= 10;
-        printf("%i \n", digit);
-        printf("%lli \n", cred);
-        digit = cred % 1000;
-        digit /= 100;
-        cred /= 10;
-        printf("%i \n", digit);
-        printf("%lli \n", cred);
-        digit = cred % 10000;
-        digit /= 1000;
-        cred /= 10;
-        printf("%i \n", digit);
-        printf("%lli \n", cred);
+    if (cred >= 4000000000000 && cred < 5000000000000) {
+        int x = 1;
+        int digSum = 0;
+        for(int i = 0; i < 6; i++) {
+            digit = cred % (100 * x);
+            digit /= (10 * x);
+            cred /= 10;
+            //printf("Original Digit: %i\n", digit);
+            digit *= 2;
+            if (digit >= 10) {
+                int tensDigit = digit / 10;
+                digit %= 10;
+                digit += tensDigit;
+            }
+            //digit += digit;
+            printf("New Digit value: %i\n", digit);
+            //printf("%lli \n", cred);
+            x *= 10;
+            digSum += digit;
+        }
+        printf("Digit Sum: %i\n", digSum);
     }
-    //printf("%i %lli \n", digit, cred);
+    else {
+        printf("invalid\n");
+    }
 
     return 0;
 
