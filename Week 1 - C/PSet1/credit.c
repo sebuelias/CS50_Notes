@@ -5,12 +5,13 @@ int main(void) {
 
     long long cred; //stored value for credit card number
     int digit;
+    int oddDigit;
 
-    //credit card lengths
-    //int amLen = 15;
-    // int masLen = 16;
-    // int visLen1 = 13;
-    // int visLen2 = 16;
+    //credit card lengths, divided by 2 and rounded up for loop purposes
+    // int amLen = 8;
+    // int masLen = 8;
+    int visLen1 = 7;
+    // int visLen2 = 8;
 
     //makes sure number entered is positive
     do {
@@ -21,24 +22,36 @@ int main(void) {
     if (cred >= 4000000000000 && cred < 5000000000000) {
         int x = 1;
         int digSum = 0;
-        for(int i = 0; i < 6; i++) {
+        int oddDigSum = 0;
+        int fullDigSum = 0;
+
+        for(int i = 0; i < visLen1 ; i++) {
             digit = cred % (100 * x);
             digit /= (10 * x);
+            oddDigit = cred % (10 * x);
+            oddDigit /= x;
             cred /= 10;
-            //printf("Original Digit: %i\n", digit);
             digit *= 2;
             if (digit >= 10) {
                 int tensDigit = digit / 10;
                 digit %= 10;
                 digit += tensDigit;
             }
-            //digit += digit;
+
             printf("New Digit value: %i\n", digit);
-            //printf("%lli \n", cred);
             x *= 10;
             digSum += digit;
+            oddDigSum += oddDigit;
+            fullDigSum = digSum + oddDigSum;
         }
-        printf("Digit Sum: %i\n", digSum);
+        printf("Even Digit Sum: %i\nOdd Digit Sum: %i\nFull Digit Sum: %i\n", fullDigSum, oddDigSum, fullDigSum);
+
+        if (fullDigSum % 10 == 0) {
+            printf("Valid checksum\n");
+        }
+        else {
+            printf("Invalid card\n");
+        }
     }
     else {
         printf("invalid\n");
