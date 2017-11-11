@@ -6,6 +6,8 @@ int main(void) {
     //change as user input value
     float change;
 
+    int changeCoin;
+
     //number of all coins used
     int coin = 0;
 
@@ -19,36 +21,38 @@ int main(void) {
     do {
         printf("Customer change: ");
         change = get_float();
+        //convert change float to changeCoin int for accurate math
+        changeCoin = change * 100;
     } while(change < 0);
 
     //quarter
-    while (change >= 0.25) {
+    while (changeCoin >= 25) {
         coin++;
         quarter--;
-        change -= 0.25;
+        changeCoin -= 25;
     }
 
     //dime
-    while (change >= 0.10 && change < 0.25) {
+    while (changeCoin >= 10 && changeCoin < 25) {
         coin++;
         dime--;
-        change -= 0.10;
+        changeCoin -= 10;
     }
 
     //nickel
-    while (change >= 0.05 && change < 0.10) {
+    while (changeCoin >= 5 && changeCoin < 10) {
         coin++;
         nickel--;
-        change -= 0.05;
+        changeCoin -= 5;
     }
 
     //penny
-    while (change > 0.000 && change < 0.05) {
+    while (changeCoin > 0 && changeCoin < 5) {
         coin++;
         penny--;
-        change -= 0.01;
+        changeCoin -= 1;
     }
 
     //number of coins used
-    printf("%i %f \n", coin, change);
+    printf("%i \n", coin);
 }
