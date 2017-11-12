@@ -45,8 +45,8 @@ int main(void) {
 	//checking card digit range to determine length and card type
 	//length is digit length/2, rounded up for odd numbers
 	if (
-		((credConst >= amex34End) && (credConst < amex34End)) || 
-		((credConst >= amex37End) && (credConst < amex37End)) || 
+		((credConst >= amex34Start) && (credConst < amex34End)) || 
+		((credConst >= amex37Start) && (credConst < amex37End)) || 
 		((credConst >= mascStart) && (credConst < mascEnd)) || 
 		((credConst >= visa16Start) && (credConst <visa16End))
 		) 
@@ -58,15 +58,14 @@ int main(void) {
 	}
 	else {
 		len = 0;
-		printf("Invalid\n");
 	}
 
 	//These values will be altered within for loop
 	digX2Sum = 0;
 	digSum = 0;
 	fullDigSum = 0;
-	tenCount = 0;
-	//FIND WAY TO GET LEN VALUE OUTSIDE OF IF FUNCTION SCOPE
+	tenCount = 1;
+	
 	//looping through digits to calculate Luhn checksum formula
 	for (int i = 0; i < len; i++) {
 		//loops through second to last number until beginning
@@ -90,6 +89,28 @@ int main(void) {
 		fullDigSum = digX2Sum + digSum;
 	}
 
+	//AmEx
+	if (((fullDigSum % 10 == 0) && ((credConst >= amex34Start) && (credConst < amex34End))) ||
+		((fullDigSum % 10 == 0) && ((credConst >= amex37Start) && (credConst < amex37End)))
+		)
+	{
+		printf("American Express\n");
+	}
+
+	else if ((fullDigSum % 10 == 0) && ((credConst >= mascStart) && (credConst < mascEnd))) {
+		printf("MasterCard\n");
+	}
+
+	//Visa
+	else if (((fullDigSum % 10 == 0) && (len == 7)) || 
+		((fullDigSum % 10 == 0) && ((credConst >= visa16Start) && (credConst <visa16End)))
+		) 
+	{
+		printf("Visa\n");
+	}
+	else {
+		printf("Invalid\n");
+	}
 
 	return 0;
 }
