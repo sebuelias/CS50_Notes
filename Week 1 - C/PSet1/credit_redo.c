@@ -9,6 +9,10 @@ int main(void) {
 	long long amex34Start, amex34End, amex37Start, amex37End, mascStart, mascEnd, visa13Start, visa13End, visa16Start, visa16End;
 	//individual digits in card number, and for loop length
 	int digX2, dig, len;
+	//sum of digits
+	int digX2Sum, digSum, fullDigSum;
+	//digit iterator
+	int tenCount;
 
 	//checks for positive long long using while invalid condition
 	do {
@@ -40,10 +44,12 @@ int main(void) {
 
 	//checking card digit range to determine length and card type
 	//length is digit length/2, rounded up for odd numbers
-	if (((credConst >= amex34End) && (credConst < amex34End)) || 
+	if (
+		((credConst >= amex34End) && (credConst < amex34End)) || 
 		((credConst >= amex37End) && (credConst < amex37End)) || 
 		((credConst >= mascStart) && (credConst < mascEnd)) || 
-		((credConst >= visa16Start) && (credConst <visa16End))) 
+		((credConst >= visa16Start) && (credConst <visa16End))
+		) 
 	{
 		len = 8;
 	}
@@ -51,7 +57,37 @@ int main(void) {
 		len =  7;
 	}
 	else {
+		len = 0;
 		printf("Invalid\n");
+	}
+
+	//These values will be altered within for loop
+	digX2Sum = 0;
+	digSum = 0;
+	fullDigSum = 0;
+	tenCount = 0;
+	//FIND WAY TO GET LEN VALUE OUTSIDE OF IF FUNCTION SCOPE
+	//looping through digits to calculate Luhn checksum formula
+	for (int i = 0; i < len; i++) {
+		//loops through second to last number until beginning
+		digX2 = credDyn % (100 * tenCount);
+		digX2 /= (10 * tenCount);
+		//loops through last number until beginning
+		dig = credDyn % (10 * tenCount);
+		dig /= tenCount;
+		credDyn /= 10; //reduces credDyn by a Tens Place
+		digX2 *= 2; //multiples digX2 by 2
+
+		if (digX2 >= 10) {
+		    int tensDigit = digX2 / 10;
+		    digX2 %= 10;
+		    digX2 += tensDigit;
+		}
+
+		tenCount *= 10;
+		digX2Sum += digX2;
+		digSum += dig;
+		fullDigSum = digX2Sum + digSum;
 	}
 
 
