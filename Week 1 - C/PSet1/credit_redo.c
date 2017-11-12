@@ -38,5 +38,22 @@ int main(void) {
 	visa16End = 5000000000000000; //Must be less than this value
 
 
+	//checking card digit range to determine length and card type
+	//length is digit length/2, rounded up for odd numbers
+	if (((credConst >= amex34End) && (credConst < amex34End)) || 
+		((credConst >= amex37End) && (credConst < amex37End)) || 
+		((credConst >= mascStart) && (credConst < mascEnd)) || 
+		((credConst >= visa16Start) && (credConst <visa16End))) 
+	{
+		len = 8;
+	}
+	else if ((credConst >= visa13Start) && (credConst < visa13End)) {
+		len =  7;
+	}
+	else {
+		printf("Invalid\n");
+	}
+
+
 	return 0;
 }
