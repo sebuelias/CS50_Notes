@@ -27,11 +27,13 @@ During these conversions, ASCII is used to represent the values, unless otherwis
 ## toupper()
 This method changes characters to uppercase, with the inclusion of the ctype.h library. If it's not possible to convert to an uppercase, the original character is returned.
 
+## '\0' Sentinel character
+This character is seen more under the hood than used in actual practice
+
 ## Arrays
 Arrays are kind of like lists that hold the same data type. There can be array of integers or even strings. However, for an array of string values, each character in each string is part of an array, so it's an array within an array. The values in an array are of equivalent data size.
 
 ## int main Program
-When writing a program with arguments, the arguments need to typed at the command line, so *./program arg1 arg2*.
+In previous lectures, the main program has taken no arguments at the command line, it's been written as int main(void), void to indicate there aren't any arguments. However, it's possible for int main to take an integer argument or an array argument at the command line. The program's name can be taken as an argument to be passed in some cases, for an argument-counter type of parameter.
 
-**I'm not really sure of the below line, but that's what I gathered from the example program in the lecture**
-In some programs, the program name can be an argument. So programs with 2 arguments will take the program as t
+It's good practice for the int main function to return a value of 0 at the end. 0, because the main program is an integer, and returning 0 means the program means runs fine. Within the program there can be error conditions, such as return 1 to indicate errors.
