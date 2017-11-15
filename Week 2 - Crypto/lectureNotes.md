@@ -17,3 +17,21 @@ A string can be any input of characters in between double-quotes. Strings can be
 Strings can be manipulated character-by-character, and one way of doing this is with the strlen(*string variable*) built-in function. If you use this in a loop you can print out every character in that string.  
 However, you can make this process more efficient. What's normally done in a for loop is the length of the counter is set to the string length, strlen in this case, but strlen counts every character of the string every time it's used. So for every iteration of the loop, every character in the string is counted. A better method is to assign strlen to a variable, and use that variable as the loop length.
 
+## Type Casting
+Type Casting is known as converting one variable value type to another, int to char or vice-versa for example. This can be done explicitly with the use of a method, or implicitly when using %*variable* symbol.  
+Using (char)*int variable* will change an integer to a character, using (int)*char variable* will change a character to an integer.  
+During a printf, if %c is used for an integer, a character will print out, %i will print an integer for a character.
+
+During these conversions, ASCII is used to represent the values, unless otherwise indicated.
+
+## toupper()
+This method changes characters to uppercase, with the inclusion of the ctype.h library. If it's not possible to convert to an uppercase, the original character is returned.
+
+## Arrays
+Arrays are kind of like lists that hold the same data type. There can be array of integers or even strings. However, for an array of string values, each character in each string is part of an array, so it's an array within an array. The values in an array are of equivalent data size.
+
+## int main Program
+When writing a program with arguments, the arguments need to typed at the command line, so *./program arg1 arg2*.
+
+**I'm not really sure of the below line, but that's what I gathered from the example program in the lecture**
+In some programs, the program name can be an argument. So programs with 2 arguments will take the program as t
