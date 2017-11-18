@@ -27,3 +27,12 @@ It's possible to pass arguments at the command line using (int argc, sring argv[
 Argv[] stands for argument vector(array) and it stores strings. This means **ANYTHING** passed into argv[] is a string, including numbers. Keep this in mind when working with numbers because they'll be treated like strings instead of integers or floats.
 
 Argv[0] accesses the first item in the vector, whereas argv[argc - 1] accesses the last element.
+
+## Magic Numbers
+This simply refers to constant numberical values in code. For example, a program that loops through a deck of cards can have the *magic number* of 52 to indicate length. However, if that same program is used for another card game it will cause problems because of that constant value.
+
+One way to not use a magic number is to use a variable instead, but that will cause problems with variables of the same name with different values.
+
+Another way is using something called *Preprocessor Directive*, which can create symbolic constants. It's written as #define **NAME** *REPLACEMENT*, without a semicolon at the end. The Name is the name of the value, deckLength for example, and Replacement is what that name represents, perhaps 52.
+
+These can't be changed like variables, but the replacements can be changed.
