@@ -13,3 +13,10 @@ Scope defines which functions can accept which variables. There are two kinds of
 Local variables are passed by value, so the *callee*(function receiving input), receives its own copy of the value. Whereas with global it's a reference to that value.
 
 It's best practice to use as little global variables as possible since programmers tend to come up with similar names and if something inadvertently alters a global value that can ruin the entire program.
+
+## Arrays
+Arrays hold values of the same value type, so it can be array of strings, floats, or integers, but nothing mixed together. The array elements, its contents, are partitioned into small identically spaced blocks. Each array element is accessed by an index number, with the first number being 0. It's possible to go over the length of an array, having arr[5] for an array with a length of 5 (instead of arr[4]), but it will cause problems. 
+
+Arrays can't just be assigned into other variables they need to manually filled in. This can be done with a loop. However, the individual array elements can be treated the same as variables.
+
+Since arrays can't be copied, they're passed by reference, so any changes made to an array's element affects the array.
