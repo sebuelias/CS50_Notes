@@ -20,3 +20,10 @@ Arrays hold values of the same value type, so it can be array of strings, floats
 Arrays can't just be assigned into other variables they need to manually filled in. This can be done with a loop. However, the individual array elements can be treated the same as variables.
 
 Since arrays can't be copied, they're passed by reference, so any changes made to an array's element affects the array.
+
+## Command Line Arguments
+It's possible to pass arguments at the command line using (int argc, sring argv[]) as the parameters. Argc stands for argument-count, and while it's not required to write it like that, it's best practice since it's so common. This tells how many things the user typed, i.e. how many arguments are being typed on the command line, and counts the program itself as an argument.
+
+Argv[] stands for argument vector(array) and it stores strings. This means **ANYTHING** passed into argv[] is a string, including numbers. Keep this in mind when working with numbers because they'll be treated like strings instead of integers or floats.
+
+Argv[0] accesses the first item in the vector, whereas argv[argc - 1] accesses the last element.
