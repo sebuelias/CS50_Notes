@@ -3,17 +3,21 @@
 #include <ctype.h>
 #include <string.h>
 
-string getName();
-
 int main(void) {
 
-    string name = getName();
-    printf("%c\n", toupper(name[0]));
+    string name = get_string();
+
+    //to get first name initial
+    printf("%c", toupper(name[0]));
+
+    //get initials of middlename/surname, separate by space
+    for (int i = 0, len = strlen(name); i < len; i++) {
+        if (name[i] == ' ') {
+            printf("%c", toupper(name[i + 1]));
+        }
+    }
+
+    printf("\n");
 
 return 0;
-}
-
-string getName(void) {
-    string name = get_string();
-    return name;
 }
