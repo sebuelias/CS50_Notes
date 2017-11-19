@@ -8,7 +8,7 @@ string getName();
 int main(void) {
 
     string name = getName();
-    printf("%s\n", name);
+    printf("%c\n", toupper(name[0]));
 
 return 0;
 }
