@@ -11,7 +11,7 @@ int main(int argc, string argv[]) {
         if (key > 0 && key < 26) {
             printf("plaintext: ");
             string plaintext = get_string();
-            printf("%s\n", plaintext);
+            printf("%s %i\n", plaintext, key);
         }
         else {
             printf("Please enter a value between 1 and 25\n");
