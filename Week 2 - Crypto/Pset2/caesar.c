@@ -7,10 +7,13 @@
 int main(int argc, string argv[]) {
 
     if (argc == 2) {
-        printf("%s\n", argv[1]);
-    }
-    else {
-        printf("enter only argument after the program\n");
+        int key = atoi(argv[1]);
+        if (key > 0 && key < 26) {
+            printf("%i\n", key);
+        }
+        else {
+            printf("Please enter a value between 1 and 25\n");
+        }
     }
 
 return 0;
