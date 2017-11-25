@@ -12,6 +12,9 @@ int main(int argc, string argv[]) {
         for (char c = 'A'; c <= 'Z'; c++) {
             printf("%c is %i\n", c, ((int) c - 65));
         }
+        for (char i = 'a'; i <= 'z'; i++) {
+            printf("%c is %i\n", i, ((int) i) - 97);
+        }
     }
     else {
         printf("Please enter one argument\n");
