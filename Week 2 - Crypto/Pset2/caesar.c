@@ -12,11 +12,12 @@ int main(int argc, string argv[]) {
         string entry = get_string();
         printf("%i\n", key);
         if (isalpha(entry[0])) {
-            if(islower(entry[0]))
-            printf("lower\n");
-            else {
-                printf("upper\n");
+            if (islower(entry[0])) {
+                for (char c = 'a'; c <= 'z'; c++) {
+
+                }
             }
+            //printf("%s %c %i\n", entry, (entry[0] + key), ((int)entry[0] + key));
         }
         /*
         for (char c = 'A'; c <= 'Z'; c++) {
