@@ -8,27 +8,26 @@ int main(int argc, string argv[]) {
 
     if (argc == 2) {
         int key = atoi(argv[1]);
+
         printf("plaintext: ");
         string plaintext = get_string();
-        printf("%i %s\n", key, plaintext);
 
-        //int newText;
         //-65 for upper, -97 for lower
         for (int i = 0, n = strlen(plaintext); i < n; i++) {
             int newText = plaintext[i];
             if (isalpha(newText)) {
                 if (islower(newText)) {
                     newText -= 97;
-                    newText += key;
+                    newText = (newText + key) % 26;
                     newText +=  97;
                 }
                 else {
                     newText -= 65;
-                    newText += key;
+                    newText = (newText + key) % 26;
                     newText +=  65;
                 }
             }
-            printf("%i%c ", newText, (char)newText);
+            printf("%c", (char)newText);
         }
         printf("\n");
     }
