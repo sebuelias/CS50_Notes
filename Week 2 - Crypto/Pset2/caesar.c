@@ -9,25 +9,31 @@ int main(int argc, string argv[]) {
     if (argc == 2) {
         int key = atoi(argv[1]);
 
+        //user submits plaintext message here
         printf("plaintext: ");
         string plaintext = get_string();
 
-        //-65 for upper, -97 for lower
+
+        printf("ciphertext: ");
+
+        //ciphertext is processed through this loop
         for (int i = 0, n = strlen(plaintext); i < n; i++) {
-            int newText = plaintext[i];
-            if (isalpha(newText)) {
-                if (islower(newText)) {
-                    newText -= 97;
-                    newText = (newText + key) % 26;
-                    newText +=  97;
+            int ciphertext = plaintext[i];
+            if (isalpha(ciphertext)) {
+                if (islower(ciphertext)) {
+                    //subtract 97 for alphabet ([0] - [25]) index
+                    ciphertext -= 97;
+                    ciphertext = (ciphertext + key) % 26;
+                    ciphertext +=  97;
                 }
                 else {
-                    newText -= 65;
-                    newText = (newText + key) % 26;
-                    newText +=  65;
+                    //subtract 65 for alphabet ([0] - [25]) index
+                    ciphertext -= 65;
+                    ciphertext = (ciphertext + key) % 26;
+                    ciphertext +=  65;
                 }
             }
-            printf("%c", (char)newText);
+            printf("%c", (char)ciphertext);
         }
         printf("\n");
     }
