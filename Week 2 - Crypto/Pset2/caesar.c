@@ -12,19 +12,23 @@ int main(int argc, string argv[]) {
         string plaintext = get_string();
         printf("%i %s\n", key, plaintext);
 
-        int newText;
+        //int newText;
         //-65 for upper, -97 for lower
         for (int i = 0, n = strlen(plaintext); i < n; i++) {
-            newText = plaintext[i];
+            int newText = plaintext[i];
             if (isalpha(newText)) {
                 if (islower(newText)) {
-                    newText = newText - 97;
+                    newText -= 97;
+                    newText += key;
+                    newText +=  97;
                 }
                 else {
-                    newText = newText - 65;
+                    newText -= 65;
+                    newText += key;
+                    newText +=  65;
                 }
             }
-            printf("%i ", newText);
+            printf("%i%c ", newText, (char)newText);
         }
         printf("\n");
     }
