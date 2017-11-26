@@ -9,24 +9,24 @@ int main(int argc, string argv[]) {
     if (argc == 2) {
         int key = atoi(argv[1]);
         printf("plaintext: ");
-        string entry = get_string();
-        printf("%i\n", key);
-        if (isalpha(entry[0])) {
-            if (islower(entry[0])) {
-                for (char c = 'a'; c <= 'z'; c++) {
+        string plaintext = get_string();
+        printf("%i %s\n", key, plaintext);
 
+        int newText;
+        //-65 for upper, -97 for lower
+        for (int i = 0, n = strlen(plaintext); i < n; i++) {
+            newText = plaintext[i];
+            if (isalpha(newText)) {
+                if (islower(newText)) {
+                    newText = newText - 97;
+                }
+                else {
+                    newText = newText - 65;
                 }
             }
-            //printf("%s %c %i\n", entry, (entry[0] + key), ((int)entry[0] + key));
+            printf("%i ", newText);
         }
-        /*
-        for (char c = 'A'; c <= 'Z'; c++) {
-            printf("%c is %i\n", c, ((int) c - 65));
-        }
-        for (char i = 'a'; i <= 'z'; i++) {
-            printf("%c is %i\n", i, ((int) i) - 97);
-        }
-        */
+        printf("\n");
     }
     else {
         printf("Please enter one argument\n");
