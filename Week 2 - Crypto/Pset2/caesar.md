@@ -10,7 +10,7 @@
 ## Pseudocode
 
 ### Command Line Arguments
-If the program receives to arguments, the second argument is used as the as the key value. That value must be an integer between 1 and 25 to proceed to the next step.
+If the program receives two arguments, the second argument is used as the as the key value. That value must be an integer between 1 and 25 to proceed to the next step.
 
 ### atio()
 This takes the seconds argument and converts it to an integer, an if statement checks if that integer is between 1 and 25.
