@@ -7,16 +7,17 @@
 int main(int argc, string argv[]) {
 
     if (argc == 2) {
-        int key = atoi(argv[1]);
 
         //user submits plaintext message here
-        printf("plaintext: ");
+        printf("plaintext: %s\n", argv[1]);
+        /*
         string plaintext = get_string();
 
 
         printf("ciphertext: ");
 
         //ciphertext is processed through this loop
+
         for (int i = 0, n = strlen(plaintext); i < n; i++) {
             int ciphertext = plaintext[i];
             if (isalpha(ciphertext)) {
@@ -36,6 +37,7 @@ int main(int argc, string argv[]) {
             printf("%c", (char)ciphertext);
         }
         printf("\n");
+        */
     }
     else {
         printf("Please enter one argument\n");
