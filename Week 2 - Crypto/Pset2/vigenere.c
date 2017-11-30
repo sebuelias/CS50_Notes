@@ -8,16 +8,23 @@ int main(int argc, string argv[]) {
 
     if (argc == 2) {
 
-        //user submits plaintext message here
-        printf("plaintext: %s\n", argv[1]);
-        /*
-        string plaintext = get_string();
+        string key = argv[1];
+        int keylen = strlen(key);
 
+        printf("plaintext: ");
+        string plaintext = get_string();
 
         printf("ciphertext: ");
 
-        //ciphertext is processed through this loop
+        for (int i = 0, n = strlen(plaintext); i < n; i++) {
+            plaintext[i];
+            key[i];
+            //subtract 97 || 65 from both key and plaintext to create alphabet index?
+        }
 
+
+
+        /*
         for (int i = 0, n = strlen(plaintext); i < n; i++) {
             int ciphertext = plaintext[i];
             if (isalpha(ciphertext)) {
@@ -36,8 +43,9 @@ int main(int argc, string argv[]) {
             }
             printf("%c", (char)ciphertext);
         }
-        printf("\n");
         */
+        printf("\n");
+
     }
     else {
         printf("Please enter one argument\n");
