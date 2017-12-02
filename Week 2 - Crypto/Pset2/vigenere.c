@@ -9,7 +9,7 @@ int main(int argc, string argv[]) {
     if (argc == 2) {
 
         string key = argv[1];
-        //int keylen = strlen(key);
+        int keylen = strlen(key);
 
         printf("plaintext: ");
         string plaintext = get_string();
@@ -24,6 +24,9 @@ int main(int argc, string argv[]) {
                 if(islower(plaintext[i])) {
                     plaintext[i] -= 97;
                     key[i] -= 97;
+                    if (i >= keylen) {
+                        key[i] = key[0];
+                    }
                     plaintext[i] = (plaintext[i] + key[i]) % 26;
                     plaintext[i] += 97;
                 }
