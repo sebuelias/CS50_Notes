@@ -14,23 +14,30 @@ int main(int argc, string argv[]) {
         printf("plaintext: ");
         string plaintext = get_string();
 
-        printf("ciphertext: ");
+        printf("ciphertext:\n");
+        string ciphertext = "";
 
         for (int i = 0, n = strlen(plaintext); i < n; i++) {
-            //subtract 97 || 65 from both key and plaintext to create alphabet index
-            string ciphertext = plaintext;
-            if (isalpha(plaintext[i])) {
-                if(islower(plaintext[i])) {
-                    plaintext[i] -= 97;
-                    key[i] -= 97;
-                    int j = i % keylen;
-                    ciphertext[i] = (plaintext[i] + key[j]) % 26;
-                    ciphertext[i] += 97;
-                }
+            int j = i % keylen;
+            ciphertext = plaintext;
+            key[i] = toupper(key[i]);
+            key[i] -= 65;
+            if(isupper(plaintext[i])) {
+                plaintext[i] -= 65;
+                ciphertext[i] = (plaintext[i] + key[j]) % 26;
+                ciphertext[i] += 65;
+                //printf("%c", ciphertext[i]);
             }
-            printf("%c", ciphertext[i]);
+            else if(islower(plaintext[i])) {
+                plaintext[i] -= 97;
+                ciphertext[i] = (plaintext[i] + key[j]) % 26;
+                ciphertext[i] += 97;
+                //printf("%c", ciphertext[i]);
+            }
+
+            printf("%i", j);
         }
-        printf("\n");
+        printf("\n%s\n", ciphertext);
 
     }
     else {
