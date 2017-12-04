@@ -9,23 +9,17 @@ int main(int argc, string argv[]) {
     if (argc == 2) {
 
         string key = argv[1];
-        //int keylen = strlen(key);
+        int keylen = strlen(key);
 
         printf("plaintext: ");
         string plaintext = get_string();
 
-        printf("ciphertext:\n");
+        printf("ciphertext: ");
         string ciphertext = "";
-        int j = 0;
+        int l = 0;
         for (int i = 0, n = strlen(plaintext); i < n; i++) {
-            if (isalpha(plaintext[i])) {
-
-                j++;
-                printf("%i ", j);
-            }
-            printf("%s\n", key);
-            /*
-            int j = i % keylen;
+            int j = l % keylen;
+            l++;
             ciphertext = plaintext;
             key[i] = toupper(key[i]);
             key[i] -= 65;
@@ -41,10 +35,11 @@ int main(int argc, string argv[]) {
                 ciphertext[i] += 97;
                 //printf("%c", ciphertext[i]);
             }
-
-            //printf("%i", j);*/
+            else if(!isalpha(plaintext[i])) {
+                l--;
+            }
         }
-        printf("\n%s\n", ciphertext);
+        printf("%s\n", ciphertext);
 
     }
     else {
