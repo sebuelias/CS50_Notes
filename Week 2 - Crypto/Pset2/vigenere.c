@@ -8,6 +8,14 @@ int main(int argc, string argv[]) {
 
     if (argc == 2) {
 
+        //checks if argv[1] has only alphabetical characters
+        for (int i = 0, n = strlen(argv[1]); i < n; i++) {
+            if (!isalpha(argv[1][i])) {
+                printf("Please enter a word\n");
+                return 1;
+            }
+        }
+
         string key = argv[1];
         int keylen = strlen(key);
 
@@ -16,26 +24,36 @@ int main(int argc, string argv[]) {
 
         printf("ciphertext: ");
         string ciphertext = "";
+
+        //counter used when iterating over the length of only alphabetical characters in the plaintext, starts at 0
         int l = 0;
+
         for (int i = 0, n = strlen(plaintext); i < n; i++) {
+
+            //this formula makes sure value of j and the position of the index in the key are of the same value, using l to check for the index in the alpha chars
             int j = l % keylen;
+
+            //alphabet counter iterating by 1
             l++;
+
             ciphertext = plaintext;
+
+            //converts all keys to uppercase so alpha-index conversion is done only once
             key[i] = toupper(key[i]);
             key[i] -= 65;
+
             if(isupper(plaintext[i])) {
                 plaintext[i] -= 65;
                 ciphertext[i] = (plaintext[i] + key[j]) % 26;
                 ciphertext[i] += 65;
-                //printf("%c", ciphertext[i]);
             }
             else if(islower(plaintext[i])) {
                 plaintext[i] -= 97;
                 ciphertext[i] = (plaintext[i] + key[j]) % 26;
                 ciphertext[i] += 97;
-                //printf("%c", ciphertext[i]);
             }
             else if(!isalpha(plaintext[i])) {
+                //it decrements by 1 for all non-alpha chars
                 l--;
             }
         }
@@ -49,3 +67,5 @@ int main(int argc, string argv[]) {
 
 return 0;
 }
+
+
