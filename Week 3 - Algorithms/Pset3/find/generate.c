@@ -21,17 +21,17 @@
 
 int main(int argc, string argv[])
 {
-    // TODO: makes sure the user enters at least argv[1], argv[2] is optional
+    // makes sure the user enters at least argv[1], argv[2] is optional
     if (argc != 2 && argc != 3)
     {
         printf("Usage: ./generate n [s]\n");
         return 1;
     }
 
-    // TODO: converts argv[1] into an integer
+    // converts argv[1] into an integer
     int n = atoi(argv[1]);
 
-    // TODO: if argv[2] entered, convert it to an integer
+    // if argv[2] entered, convert it to an integer
     if (argc == 3)
     {
         srand48((long) atoi(argv[2]));
@@ -41,7 +41,7 @@ int main(int argc, string argv[])
         srand48((long) time(NULL));
     }
 
-    // TODO: loops through the length of argv[1], an integer, and generates a random value per iteration
+    // loops through argv[1] value, for each iteration runs drand48() times the limit integer defined above
     for (int i = 0; i < n; i++)
     {
         printf("%i\n", (int) (drand48() * LIMIT));
