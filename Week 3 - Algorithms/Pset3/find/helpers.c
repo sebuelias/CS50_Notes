@@ -3,7 +3,7 @@
  *
  * Helper functions for Problem Set 3.
  */
- 
+
 #include <cs50.h>
 
 #include "helpers.h"
@@ -13,7 +13,7 @@
  */
 bool search(int value, int values[], int n)
 {
-    // TODO: implement a searching algorithm
+    // TODO: implement a searching algorithm, binary search O(log n)
     return false;
 }
 
@@ -22,6 +22,6 @@ bool search(int value, int values[], int n)
  */
 void sort(int values[], int n)
 {
-    // TODO: implement a sorting algorithm
+    // TODO: implement a sorting algorithm, selection sort or bubble sort O(n^2)
     return;
 }
