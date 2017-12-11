@@ -8,7 +8,7 @@
  * where n is number of pseudorandom numbers to print
  * and s is an optional seed
  */
- 
+
 #define _XOPEN_SOURCE
 
 #include <cs50.h>
@@ -21,17 +21,17 @@
 
 int main(int argc, string argv[])
 {
-    // TODO: comment me
+    // TODO: makes sure the user enters at least argv[1], argv[2] is optional
     if (argc != 2 && argc != 3)
     {
         printf("Usage: ./generate n [s]\n");
         return 1;
     }
 
-    // TODO: comment me
+    // TODO: converts argv[1] into an integer
     int n = atoi(argv[1]);
 
-    // TODO: comment me
+    // TODO: if argv[2] entered, convert it to an integer
     if (argc == 3)
     {
         srand48((long) atoi(argv[2]));
@@ -41,7 +41,7 @@ int main(int argc, string argv[])
         srand48((long) time(NULL));
     }
 
-    // TODO: comment me
+    // TODO: loops through the length of argv[1], an integer, and generates a random value per iteration
     for (int i = 0; i < n; i++)
     {
         printf("%i\n", (int) (drand48() * LIMIT));
