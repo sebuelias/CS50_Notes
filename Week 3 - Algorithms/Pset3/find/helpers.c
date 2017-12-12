@@ -15,7 +15,12 @@ bool search(int value, int values[], int n)
 {
     // TODO: implement a searching algorithm, binary search O(log n)
     // O(n) first just to see if value can be found, linear search
-    // return false;
+
+    if (n < 0)
+    {
+        return false;
+    }
+
     for (int i = 0; i < n; i++)
     {
         if (values[i] == value)
