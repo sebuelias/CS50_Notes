@@ -37,5 +37,8 @@ bool search(int value, int values[], int n)
 void sort(int values[], int n)
 {
     // TODO: implement a sorting algorithm, selection sort or bubble sort O(n^2)
-    return;
+    for (int i = 0; i < n; i++)
+    {
+
+    }
 }
