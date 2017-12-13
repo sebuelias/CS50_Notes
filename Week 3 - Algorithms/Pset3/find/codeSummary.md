@@ -20,7 +20,11 @@ This happens until the largest value in the array gets pushed to the end. The pr
 8. All steps are repeated until each value is bubbled out. Array should now be sorted from smallest to greatest.
 
 ### Pseudocode 
-
+    for loop through array  
+    	if index[i] > index[i+1]  
+			index[i] = index[i] + 1
+		
+		
 
 ## Selection Sort
 
