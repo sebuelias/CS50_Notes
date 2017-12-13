@@ -10,6 +10,9 @@ This happens until the largest value in the array gets pushed to the end. The pr
 
 ### Steps
 
+*A counter, starting at a value other than 0, runs during the sort. It sets itself to 0 at the beginning of each loop iteration. If an index moves forward one position, the counter increments by 1.*  
+*This counter lets us know when the bubble sort algorithm should stop running. The algorithm ends when the counter value is 0 at the end of the loop. That means no index changed position, which means the array is sorted*
+
 1. Move through array, index-pair by index-pair.
 2. If the left index is of a greater value than the right index, move the left index one position forward. 
 3. But if the left index is of a lesser value, it stays in place.
@@ -20,11 +23,13 @@ This happens until the largest value in the array gets pushed to the end. The pr
 8. All steps are repeated until each value is bubbled out. Array should now be sorted from smallest to greatest.
 
 ### Pseudocode 
-    for loop through array  
+    counter = -1
+    for loop through array
+    	counter = 0  
     	if index[i] > index[i+1]  
 			index[i] = index[i] + 1
-		
-		
+			counter++
+			
 
 ## Selection Sort
 
