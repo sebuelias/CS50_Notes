@@ -15,21 +15,24 @@ int main(int argc, string argv[])
     else if (argc == 2)
     {
 
+        string word = argv[1];
         int n = strlen(argv[1]);
-
         int counter = 13;
 
         for (int i = 0; i < n; i++)
         {
+            if (word[i] > word[i+1]) {
+                printf("%c ", word[i]);
+            }
             counter = 0;
             for (int j = 0; j < n; j++)
             {
-                argv[i] = argv[i+1];
+                //word[i] = word[i+1];
                 counter++;
             }
-            printf("%i\n", counter);
+            //printf("[%i]", counter);
         }
-        printf("%s\n", argv[1]);
+        printf("\n%s\n", word);
     }
 
 return 0;
