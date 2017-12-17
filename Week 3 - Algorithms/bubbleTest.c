@@ -21,16 +21,17 @@ int main(int argc, string argv[])
 
         for (int i = 0; i < n; i++)
         {
-            if (word[i] > word[i+1]) {
-                printf("%c ", word[i]);
-            }
             counter = 0;
             for (int j = 0; j < n; j++)
             {
-                //word[i] = word[i+1];
-                counter++;
+                if (word[j] > word[j+1])
+                {
+                    counter++;
+                    word[j] = word[j+1];
+                    printf("%c", word[j]);
+                }
             }
-            //printf("[%i]", counter);
+            printf("[%i] ", counter);
         }
         printf("\n%s\n", word);
     }
