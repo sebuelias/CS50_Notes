@@ -16,9 +16,10 @@ int main(int argc, string argv[])
     {
 
         string word = argv[1];
+
         int n = strlen(argv[1]);
         int counter = 13;
-        int swap;
+        char swap;
 
         for (int i = 0; i < n; i++)
         {
@@ -28,15 +29,19 @@ int main(int argc, string argv[])
                 if (word[j] > word[j+1])
                 {
                     counter++;
-                    swap = word[j];
-                    word[j] = word[j+1];
-                    word[j+1] = swap;
-                    printf("%c", word[j]);
+
+                    swap = word[j]; //temporarily assigns left-side index to variable
+                    word[j] = word[j+1]; //switches left-side index with right-side
+                    word[j+1] = swap; //assigns right-side index to temp variable
                 }
             }
-            printf("[%i] ", counter);
+
+            if (counter == 0)
+            {
+                break;
+            }
         }
-        printf("\n%s\n", word);
+        printf("%s\n", word);
     }
 
 return 0;
