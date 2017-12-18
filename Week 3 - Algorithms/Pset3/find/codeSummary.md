@@ -50,3 +50,13 @@ The same process of checking **this midpoint**, as well checking greater than or
 Eventually the value is found or not.  
 The algorithm knows the value isn't found when the starting index becomes greater than the ending index (which gives a negative value when subtracting).
 
+### Steps
+
+1. Subtract current **Start Index** from **End Index**
+2. Divide that answer by 2, this is the **Midpoint**
+3. Check if the **Value** is in the **Midpoint**
+4. If the **Value** isn't there, check if it's greater or less than **Midpoint**
+5. If **Greater**, discard contents to left of **Midpoint**
+6. If **Lesser**, discard contents to **Midpoint**'s right
+7. Repeat steps **1–7** until the value is found or not
+8. If the **Start Index** is of a greater value than the **End Index** that means the value wasn't found
