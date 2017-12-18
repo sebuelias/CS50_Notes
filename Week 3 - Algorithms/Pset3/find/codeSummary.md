@@ -1,4 +1,4 @@
-# Sorting Algorithm Summary
+# Algorithm Summary
 
 ## Bubble Sort
 
@@ -25,16 +25,28 @@ This happens until the largest value in the array gets pushed to the end. The pr
 ### Pseudocode 
     counter = -1
     for loop through array
-    	counter = 0  
-    	if index[i] > index[i+1]  
-			index[i] = index[i] + 1
-			counter++
-			
-
-## Selection Sort
+    	counter = 0
+    	inner for loop through array
+	    	if index[i] > index[i+1]
+	    		tempVar = index[i]  
+				index[i] = index[i+1]
+				index[i+1] = tempVar
+				counter++
+			if counter == 0
+				break
+				
+				
+## Binary Search
 
 ### Summary
 
-### Steps
+First the array must be sorted.  
+This algorithm will constantly look for a midpoint, so it can't just divide it's length by 2 as the midpoint will change as the array decreases by half. The midpoint is found by subtracting the beginning of the array, start-point, from the end of the array, end-point, and dividing that value by 2.  
+It checks if the **current midpoint** contains the value. If it doesn't, it checks if the value is greater than or less than the **current midpoint**.  
+If greater, it discards all values to the left of the **current midpoint**.
+If less, all values to the **current midpoint**'s right are discarded.
+Whether the algorithm is currently in the greater than or less than side of the array, it subtracts the *new* starting index from the *new* ending index, and divides that value by 2, to find the midpoint.  
+The same process of checking **this midpoint**, as well checking greater than or less than is repeated again, as well as more dividing by 2.  
+Eventually the value is found or not.  
+The algorithm knows the value isn't found when the starting index becomes greater than the ending index (which gives a negative value when subtracting).
 
-### Pseudocode 

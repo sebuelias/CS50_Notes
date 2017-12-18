@@ -44,7 +44,7 @@ void sort(int values[], int n)
     {
         counter = 0; //set to 0 for start of loop
 
-        for (int j = 0; j < n-1; j++)
+        for (int j = 0; j < n-1; j++) //n-1 so it doesn't swap values[j-1] (last value in index) with values[j] (index after last value...meaning no value)
         {
             if (values[j] > values[j+1])
             {
