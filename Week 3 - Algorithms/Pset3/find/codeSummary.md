@@ -60,3 +60,9 @@ The algorithm knows the value isn't found when the starting index becomes greate
 6. If **Lesser**, discard contents to **Midpoint**'s right
 7. Repeat steps **1–7** until the value is found or not
 8. If the **Start Index** is of a greater value than the **End Index** that means the value wasn't found
+
+
+### Pseudocode
+    while array length > 0
+        start point = index[n-n]
+        end point = index[n-1]
