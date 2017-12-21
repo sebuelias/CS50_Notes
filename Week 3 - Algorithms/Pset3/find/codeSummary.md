@@ -63,6 +63,12 @@ The algorithm knows the value isn't found when the starting index becomes greate
 
 
 ### Pseudocode
-    while array length > 0
-        start point = index[n-n]
-        end point = index[n-1]
+    while array_mid > 0
+        (array_start + array_end) / 2 = mid
+        if array[mid] = value
+            return true
+        else if value > array[mid]
+            array_start = array_mid + 1
+        else if value < array[mid]
+            array_end = array_mid - 1
+        return false
