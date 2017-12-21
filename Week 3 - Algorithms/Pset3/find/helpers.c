@@ -13,22 +13,29 @@
  */
 bool search(int value, int values[], int n)
 {
-    // TODO: implement a searching algorithm, binary search O(log n)
-    // O(n) first just to see if value can be found, linear search
 
-    if (n < 0)
-    {
-        return false;
-    }
+    int start = 0;
+    int end = (n - 1);
 
-    for (int i = 0; i < n; i++)
+    while (n > 0)
     {
-        if (values[i] == value)
+        int mid = (start + end) / 2;
+        if (value == values[mid])
         {
             return true;
         }
+        else if (value > values[mid])
+        {
+            start = mid + 1;
+        }
+        else if (value < values[mid])
+        {
+            end = mid - 1;
+        }
     }
+
     return false;
+
 }
 
 /**
@@ -44,7 +51,7 @@ void sort(int values[], int n)
     {
         counter = 0; //set to 0 for start of loop
 
-        for (int j = 0; j < n-1; j++) //n-1 so it doesn't swap values[j-1] (last value in index) with values[j] (index after last value...meaning no value)
+        for (int j = 0; j < n - 1; j++)
         {
             if (values[j] > values[j+1])
             {
