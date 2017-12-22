@@ -16,10 +16,11 @@ bool search(int value, int values[], int n)
 
     int start = 0;
     int end = (n - 1);
+    int mid;
 
     while (n > 0)
     {
-        int mid = (start + end) / 2;
+        mid = (start + end) / 2;
         if (value == values[mid])
         {
             return true;
@@ -31,6 +32,11 @@ bool search(int value, int values[], int n)
         else if (value < values[mid])
         {
             end = mid - 1;
+        }
+        if (end <= start)
+        {
+            break;
+            return false;
         }
     }
 
