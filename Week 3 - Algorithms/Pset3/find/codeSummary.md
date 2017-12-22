@@ -71,4 +71,7 @@ The algorithm knows the value isn't found when the starting index becomes greate
             array_start = array_mid + 1
         else if value < array[mid]
             array_end = array_mid - 1
+        if end <= start
+            break
+            return false
         return false
