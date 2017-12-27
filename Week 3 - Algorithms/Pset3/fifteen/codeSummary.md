@@ -13,8 +13,21 @@ Another thing to consider is the 1 and 2 tile positions need to be swapped for a
 
 ### Steps
 
-### Pseudocode
+1. Create empty Array[4][4]  
+2. Use nested, decrementing loop to populate array from 15 to 1.  
+3. If the grid dimensions are even, swap the 2 and 1 tiles.  
+4. Array[3][3] value is empty, no integers in it.
 
+### Pseudocode
+    int grid[4][4]
+	for int i = gridLen - 1; i >; 0 i--
+		for int j = gridLen - 1; j > 0; j--
+			if gridlen % 2 == 0
+				int one = grid[j - 1]
+				grid[j - 2] = grid[j - 1]
+				one = grid[j - 2]
+	grid[3][3] == null
+	
 
 ## draw()
 
