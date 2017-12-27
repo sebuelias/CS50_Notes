@@ -157,18 +157,23 @@ void greet(void)
 void init(void)
 {
     // TODO
-
+    int tile = (d * d) - 1;
     for (int row = 0; row < d; row++)
     {
         for (int col = 0; col < d; col++)
         {
-            board[row][col] = (d*d);
+            board[row][col] = tile--;
 
             if (d % 2 == 0)
             {
-                int swap = board[d-1][d-2];
-                board[d-1][d-2] = board[d-1][d-2];
-                swap = board[d-1][d-2];
+                if (board[row][col] == 2)
+                {
+                    board[row][col] = 1;
+                }
+                else if (board[row][col] == 1)
+                {
+                    board[row][col] = 2;
+                }
             }
         }
     }
@@ -185,7 +190,7 @@ void draw(void)
     {
         for (int col = 0; col < d; col++)
         {
-            printf("%2i", board[row][col]);
+            printf("%2i ", board[row][col]);
         }
         printf("\n");
     }
