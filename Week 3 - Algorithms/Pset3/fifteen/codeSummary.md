@@ -22,10 +22,12 @@ Another thing to consider is the 1 and 2 tile positions need to be swapped for a
     int grid[4][4]
 	for int i = gridLen - 1; i >; 0 i--
 		for int j = gridLen - 1; j > 0; j--
+			grid[i][j] = i
 			if gridlen % 2 == 0
-				int one = grid[j - 1]
-				grid[j - 2] = grid[j - 1]
-				one = grid[j - 2]
+				int one = grid[gridLen - gridLen - 1][gridLen - gridLen - 1]
+				grid[gridLen - gridLen - 2][gridLen - gridLen - 2] = 
+				grid[gridLen - gridLen - 1][gridLen - gridLen - 1]
+				one = grid[gridLen - gridLen - 2][gridLen - gridLen - 2]
 	grid[3][3] == null
 	
 
