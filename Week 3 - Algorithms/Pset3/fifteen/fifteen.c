@@ -163,15 +163,17 @@ void init(void)
     {
         for (int col = 0; col < d; col++)
         {
+            grid[row][col] = (d*d) - 1;
+
             if (d % 2 == 0)
             {
-                int one = grid[d-1][d-2];
-                grid[d-1][d-2] = grid[d-1][d-3];
-                grid[d-1][d-3] = one;
+                int swap = grid[d-1][d-2];
+                grid[d-1][d-2] = grid[d-1][d-2];
+                swap = grid[d-1][d-2];
             }
         }
     }
-    grid[d-1][d-1] = 0;
+    grid[d-1][d-1] = (char)0;
 }
 
 /**
