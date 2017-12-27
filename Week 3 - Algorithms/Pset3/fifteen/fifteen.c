@@ -158,22 +158,21 @@ void init(void)
 {
     // TODO
 
-    int grid[d][d];
     for (int row = 0; row < d; row++)
     {
         for (int col = 0; col < d; col++)
         {
-            grid[row][col] = (d*d) - 1;
+            board[row][col] = (d*d);
 
             if (d % 2 == 0)
             {
-                int swap = grid[d-1][d-2];
-                grid[d-1][d-2] = grid[d-1][d-2];
-                swap = grid[d-1][d-2];
+                int swap = board[d-1][d-2];
+                board[d-1][d-2] = board[d-1][d-2];
+                swap = board[d-1][d-2];
             }
         }
     }
-    grid[d-1][d-1] = (char)0;
+    board[d-1][d-1] = 0;
 }
 
 /**
@@ -182,6 +181,15 @@ void init(void)
 void draw(void)
 {
     // TODO
+    for (int row = 0; row < d; row++)
+    {
+        for (int col = 0; col < d; col++)
+        {
+            printf("%i", board[row][col]);
+        }
+        printf("\n");
+    }
+    board[d-1][d-1] = (char)0;
 }
 
 /**
