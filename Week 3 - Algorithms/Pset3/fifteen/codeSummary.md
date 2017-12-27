@@ -19,16 +19,16 @@ Another thing to consider is the 1 and 2 tile positions need to be swapped for a
 4. Array[3][3] value is empty, no integers in it.
 
 ### Pseudocode
-    int grid[4][4]
-	for int i = gridLen - 1; i >; 0 i--
-		for int j = gridLen - 1; j > 0; j--
+    int grid[d][d]
+    int n = sizeof(grid)/4 
+	for int i = n - 1; i >; 0 i--
+		for int j = n - 1; j > 0; j--
 			grid[i][j] = i
-			if gridlen % 2 == 0
-				int one = grid[gridLen - gridLen - 1][gridLen - gridLen - 1]
-				grid[gridLen - gridLen - 2][gridLen - gridLen - 2] = 
-				grid[gridLen - gridLen - 1][gridLen - gridLen - 1]
-				one = grid[gridLen - gridLen - 2][gridLen - gridLen - 2]
-	grid[3][3] == null
+			if n % 2 == 0
+				int one = grid[d - 1][d - 2]
+				grid[d][d] = grid[d][d]
+				one = grid[d][d]
+	grid[d-1][d-1] == null
 	
 
 ## draw()

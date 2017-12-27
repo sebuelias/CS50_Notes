@@ -157,24 +157,24 @@ void greet(void)
 void init(void)
 {
     // TODO
-    int grid[4][4];
-    int n = sizeof(grid);
-    printf("%i is the grid size\n", n);
+
+    int grid[d][d];
+    int n = sizeof(grid)/4;
     for (int i = n - 1; i > 0; i--)
     {
         for (int j = n - 1; j > 0; j--)
         {
             grid[i][j] = i;
-            if (n % 2 == 0)
+            if (n % d == 0)
             {
-                int one = grid[n - (n - 1)][n - (n - 1)];
-                grid[n - (n - 2)][n - (n - 2)] = grid[n - (n - 1)][n - (n - 1)];
-                one = grid[n - (n - 2)][n - (n - 2)];
+                int one = grid[d-1][d-2];
+                grid[d-1][d-2] = grid[d-1][d-3];
+                grid[d-1][d-3] = one;
             }
         }
         printf("%i\n", grid[i][i]);
     }
-    grid[3][3] = 0;
+    grid[d-1][d-1] = 0;
 }
 
 /**
