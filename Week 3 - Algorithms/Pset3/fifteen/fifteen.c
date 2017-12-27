@@ -185,7 +185,7 @@ void draw(void)
     {
         for (int col = 0; col < d; col++)
         {
-            printf("%i", board[row][col]);
+            printf("%2i", board[row][col]);
         }
         printf("\n");
     }
