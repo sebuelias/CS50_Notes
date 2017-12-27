@@ -159,20 +159,17 @@ void init(void)
     // TODO
 
     int grid[d][d];
-    int n = sizeof(grid)/4;
-    for (int i = n - 1; i > 0; i--)
+    for (int row = 0; row < d; row++)
     {
-        for (int j = n - 1; j > 0; j--)
+        for (int col = 0; col < d; col++)
         {
-            grid[i][j] = i;
-            if (n % d == 0)
+            if (d % 2 == 0)
             {
                 int one = grid[d-1][d-2];
                 grid[d-1][d-2] = grid[d-1][d-3];
                 grid[d-1][d-3] = one;
             }
         }
-        printf("%i\n", grid[i][i]);
     }
     grid[d-1][d-1] = 0;
 }
