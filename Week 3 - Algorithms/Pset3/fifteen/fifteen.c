@@ -158,6 +158,7 @@ void init(void)
 {
     // TODO
     int tile = (d * d) - 1;
+
     for (int row = 0; row < d; row++)
     {
         for (int col = 0; col < d; col++)
@@ -177,7 +178,6 @@ void init(void)
             }
         }
     }
-    board[d-1][d-1] = 0;
 }
 
 /**
@@ -191,10 +191,13 @@ void draw(void)
         for (int col = 0; col < d; col++)
         {
             printf("%2i ", board[row][col]);
+            if (board[row][col] == 0)
+            {
+                printf("%2c", '_');
+            }
         }
         printf("\n");
     }
-    board[d-1][d-1] = (char)0;
 }
 
 /**
