@@ -222,7 +222,12 @@ bool move(int tile)
     {
         for (int col = 0; col < d; col++)
         {
-
+            tile = board[row][col];
+            if (board[row+1][col-1] == 9)
+            {
+            printf("%i ", tile);
+            return true;
+            }
         }
     }
     return false;
