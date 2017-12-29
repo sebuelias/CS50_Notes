@@ -167,6 +167,12 @@ void init(void)
 
             if (d % 2 == 0)
             {
+                /*
+                int swap = board[d-1][d-2];
+                board[d-1][d-2] = board[d-1][d-3];
+                board[d-1][d-3] = swap;
+                */
+
                 if (board[row][col] == 2)
                 {
                     board[row][col] = 1;
@@ -175,6 +181,7 @@ void init(void)
                 {
                     board[row][col] = 2;
                 }
+
             }
         }
     }
@@ -190,11 +197,15 @@ void draw(void)
     {
         for (int col = 0; col < d; col++)
         {
-            printf("%2i ", board[row][col]);
+            if (board[row][col] > 0)
+            {
+                printf("%2i ", board[row][col]);
+            }
             if (board[row][col] == 0)
             {
-                printf("%2c", '_');
+                printf(" _");
             }
+
         }
         printf("\n");
     }
