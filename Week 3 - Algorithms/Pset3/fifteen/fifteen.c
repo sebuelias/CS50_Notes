@@ -218,6 +218,13 @@ void draw(void)
 bool move(int tile)
 {
     // TODO
+    for (int row = 0; row < d; row++)
+    {
+        for (int col = 0; col < d; col++)
+        {
+
+        }
+    }
     return false;
 }
 
