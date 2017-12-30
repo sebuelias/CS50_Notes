@@ -218,20 +218,19 @@ void draw(void)
 bool move(int tile)
 {
     // TODO
-    int k;
-    int l;
+    // int k;
+    // int l;
     for (int row = 0; row < d; row++)
     {
         for (int col = 0; col < d; col++)
         {
-            k = row;
-            l = col;
-            int blank = board[0][0];
+            // k = row;
+            // l = col;
+            //int blank = board[d-1][d-1];
             if (board[col][row] == tile)
             {
-                blank = tile;
-                printf("[%i][%i]\n", l, k);
-                printf("%i")
+                board[d-1][d-1] = tile;
+                board[col][row] = tile - tile;
                 return true;
             }
         }
