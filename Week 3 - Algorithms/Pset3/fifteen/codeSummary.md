@@ -1,58 +1,30 @@
-# Algorithm Summary
+# Game of Fifteen Pseudocode
 
 ## init()
 
-### Summary
-Initialize the **Game of Fifteen** board, basically create the game board which is a 4x4 grid. This can be done by making a 2-Dimensional array, that is an array with with rows and columns, also known as a **matrix**.
-
-It's shown as *Array*[x][y], so an int grid[4][4], will have 4 *[x]* index rows across [*y* 0], [*y* 1], [*y* 2], and [*y* 3] times. This works similar to a nested loop, and actually needs that kind of loop to populate the grid.
-
-For **Game of Fifteen**, every index will contain an integer except for grid[3][3], which will contain no value. This is the *blank space* for the game. The pieces are in descending order, so the loop needs to decrement from 15 to 1. The blank space, [3][3] is excluded from the loop during initialization.
-
-Another thing to consider is the 1 and 2 tile positions need to be swapped for an even-dimensioned grid, it should be **3**, **1**, **2** instead, so the game can be won. 
-
-### Steps
-
-1. Create empty Array[4][4]  
-2. Use nested, decrementing loop to populate array from 15 to 1.  
-3. If the grid dimensions are even, swap the 2 and 1 tiles.  
-4. Array[3][3] value is empty, no integers in it.
-
-### Pseudocode
-    int grid[d][d]
-    int n = sizeof(grid)/4 
-	for int i = n - 1; i >; 0 i--
-		for int j = n - 1; j > 0; j--
-			grid[i][j] = i
-			if n % 2 == 0
-				int one = grid[d - 1][d - 2]
-				grid[d][d] = grid[d][d]
-				one = grid[d][d]
-	grid[d-1][d-1] == null
-	
+    //find highest piece number by squaring user input and subtracting 1
+    piece = (d * d) - 1
+    for i = 0 i < d i++
+        for j = 0 j < d j++
+	        piece-- //decrements so board can fill from large to small
+	        if d % 2 == 0 //only do this for an even value
+	        	//swap positions of the penultimate tiles, 1 and 2
+	            swap = board[d-1][d-1]
+	            board[d-1][d-1] = board[d-1][d-2]
+	            board[d-1][d-2] = swap
 
 ## draw()
 
-### Summary
-
-### Steps
-
-### Pseudocode
+    for i = 0 i < d i++
+        for j = 0 j < d j++
+        	if board[i][j] > 0
+	        	printf board[i][j] //init() pieces are printed
+	        	if board[i][j] == 0
+	        		printf '_'
 
 
 ## move()
 
-### Summary
-
-### Steps
-
-### Pseudocode
-
 
 ## won()
 
-### Summary
-
-### Steps
-
-### Pseudocode
