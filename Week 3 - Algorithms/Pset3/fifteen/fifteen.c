@@ -218,15 +218,21 @@ void draw(void)
 bool move(int tile)
 {
     // TODO
+    int k;
+    int l;
     for (int row = 0; row < d; row++)
     {
         for (int col = 0; col < d; col++)
         {
-            tile = board[row][col];
-            if (board[row+1][col-1] == 9)
+            k = row;
+            l = col;
+            int blank = board[0][0];
+            if (board[col][row] == tile)
             {
-            printf("%i ", tile);
-            return true;
+                blank = tile;
+                printf("[%i][%i]\n", l, k);
+                printf("%i")
+                return true;
             }
         }
     }
