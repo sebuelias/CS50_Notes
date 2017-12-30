@@ -27,6 +27,11 @@
 
 	for i = 0 i < d i++
         for j = 0 j < d j++
+        	swap tile input with 0/_ array element
+        	if board[i][j] == 0
+        		blank = board[i][j]
+        		board[i][j] = tile
+        		
         	return true
 	return false    
 

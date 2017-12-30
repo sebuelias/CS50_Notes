@@ -165,24 +165,24 @@ void init(void)
         {
             board[i][j] = tile--;
 
-          //  if (d % 2 == 0)
-          //  {
-
+            if (d % 2 == 0)
+            {
+                /*
                 int swap = board[d-1][d-2];
                 board[d-1][d-2] = board[d-1][d-3];
-                board[d-3][d-1] = swap;
+                board[d-1][d-3] = swap;
+                */
 
+                if (board[i][j] == 2)
+                {
+                    board[i][j] = 1;
+                }
+                else if (board[i][j] == 1)
+                {
+                    board[i][j] = 2;
+                }
 
-                // if (board[i][j] == 2)
-                // {
-                //     board[i][j] = 1;
-                // }
-                // else if (board[i][j] == 1)
-                // {
-                //     board[i][j] = 2;
-                // }
-
-          //  }
+            }
         }
     }
 }
@@ -222,7 +222,11 @@ bool move(int tile)
     {
         for (int j = 0; j < d; j++)
         {
-
+            if (board[i][j] == 0)
+            {
+                board[i][j] = tile;
+                return true;
+            }
         }
     }
     return false;
