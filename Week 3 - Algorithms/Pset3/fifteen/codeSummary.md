@@ -23,7 +23,12 @@
 	        		printf '_'
 
 
-## move()
+## move(int tile)
+
+	for i = 0 i < d i++
+        for j = 0 j < d j++
+        	return true
+	return false    
 
 
 ## won()
