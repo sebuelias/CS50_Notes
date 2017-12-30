@@ -159,30 +159,30 @@ void init(void)
     // TODO
     int tile = (d * d) - 1;
 
-    for (int row = 0; row < d; row++)
+    for (int i = 0; i < d; i++)
     {
-        for (int col = 0; col < d; col++)
+        for (int j = 0; j < d; j++)
         {
-            board[row][col] = tile--;
+            board[i][j] = tile--;
 
-            if (d % 2 == 0)
-            {
-                /*
+          //  if (d % 2 == 0)
+          //  {
+
                 int swap = board[d-1][d-2];
                 board[d-1][d-2] = board[d-1][d-3];
-                board[d-1][d-3] = swap;
-                */
+                board[d-3][d-1] = swap;
 
-                if (board[row][col] == 2)
-                {
-                    board[row][col] = 1;
-                }
-                else if (board[row][col] == 1)
-                {
-                    board[row][col] = 2;
-                }
 
-            }
+                // if (board[i][j] == 2)
+                // {
+                //     board[i][j] = 1;
+                // }
+                // else if (board[i][j] == 1)
+                // {
+                //     board[i][j] = 2;
+                // }
+
+          //  }
         }
     }
 }
@@ -193,17 +193,17 @@ void init(void)
 void draw(void)
 {
     // TODO
-    for (int row = 0; row < d; row++)
+    for (int i = 0; i < d; i++)
     {
-        for (int col = 0; col < d; col++)
+        for (int j = 0; j < d; j++)
         {
-            if (board[row][col] > 0)
+            if (board[i][j] > 0)
             {
-                printf("%2i ", board[row][col]);
+                printf("%2i ", board[i][j]);
             }
-            if (board[row][col] == 0)
+            if (board[i][j] == 0)
             {
-                printf(" _");
+                printf(" _ ");
             }
 
         }
@@ -218,21 +218,11 @@ void draw(void)
 bool move(int tile)
 {
     // TODO
-    // int k;
-    // int l;
-    for (int row = 0; row < d; row++)
+    for (int i = 0; i < d; i++)
     {
-        for (int col = 0; col < d; col++)
+        for (int j = 0; j < d; j++)
         {
-            // k = row;
-            // l = col;
-            //int blank = board[d-1][d-1];
-            if (board[col][row] == tile)
-            {
-                board[d-1][d-1] = tile;
-                board[col][row] = tile - tile;
-                return true;
-            }
+
         }
     }
     return false;
