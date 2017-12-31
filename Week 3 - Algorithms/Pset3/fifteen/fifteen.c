@@ -218,15 +218,13 @@ void draw(void)
 bool move(int tile)
 {
     // TODO
+
     for (int i = 0; i < d; i++)
     {
         for (int j = 0; j < d; j++)
         {
-            if (board[i][j] == 0)
-            {
-                board[i][j] = tile;
-                return true;
-            }
+            int k = i;
+            int l = j;
         }
     }
     return false;
