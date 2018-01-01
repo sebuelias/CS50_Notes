@@ -167,20 +167,6 @@ void init(void)
 
             if (d % 2 == 0)
             {
-                /*
-                int swap = board[d-1][d-2];
-                board[d-1][d-2] = board[d-1][d-3];
-                board[d-1][d-3] = swap;
-                */
-
-                if (board[i][j] == 2)
-                {
-                    board[i][j] = 1;
-                }
-                else if (board[i][j] == 1)
-                {
-                    board[i][j] = 2;
-                }
 
             }
         }
@@ -224,7 +210,6 @@ bool move(int tile)
         {
             if (board[i][j] == 0)
             {
-                board[i][j] = tile;
                 return true;
             }
         }
