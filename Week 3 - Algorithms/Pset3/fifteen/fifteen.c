@@ -157,17 +157,18 @@ void greet(void)
 void init(void)
 {
     // TODO
-    int tile = (d * d) - 1;
+    int tile = (d * d) - 1; //tile number starts from highest value
 
     for (int i = 0; i < d; i++)
     {
         for (int j = 0; j < d; j++)
         {
-            board[i][j] = tile--;
+            board[i][j] = tile--; //tile decrements for each iteration of 2d array
 
             if (d % 2 == 0)
             {
-
+                board[d-1][d-2] = 2;
+                board[d-1][d-3] = 1;
             }
         }
     }
@@ -191,10 +192,10 @@ void draw(void)
             {
                 printf(" _ ");
             }
-
         }
         printf("\n");
     }
+
 }
 
 /**
@@ -204,22 +205,6 @@ void draw(void)
 bool move(int tile)
 {
     // TODO
-
-    for (int i = 0; i < d; i++)
-    {
-        for (int j = 0; j < d; j++)
-        {
-<<<<<<< HEAD
-            if (board[i][j] == 0)
-            {
-                return true;
-            }
-=======
-            int k = i;
-            int l = j;
->>>>>>> 41c298f4b4c8d8d5f428ace46a158024eb1da96e
-        }
-    }
     return false;
 }
 
