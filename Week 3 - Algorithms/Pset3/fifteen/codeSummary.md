@@ -25,6 +25,22 @@
 
 ## move(int tile)
 
+	for int i = 0; i < d; i++
+		for int j = 0; j < d; j++
+			if (tile == board[i][j])
+				int a = i
+				int b = j
+				if (
+				board[i+1][j] == 0 ||
+				board[i-1][j] == 0 ||
+				board[i][j+1] == 0 ||
+				board[i][j-1] == 0
+				)
+					board[i][j] = 0
+					0 tile = board[a][b]
+					board[a][b] = tile
+					return true
+	return false
 
 
 ## won()
