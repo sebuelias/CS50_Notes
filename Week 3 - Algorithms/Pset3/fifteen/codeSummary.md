@@ -30,14 +30,24 @@
 			if (tile == board[i][j])
 				int a = i
 				int b = j
-				if (
-				board[i+1][j] == 0 ||
-				board[i-1][j] == 0 ||
-				board[i][j+1] == 0 ||
-				board[i][j-1] == 0
-				)
+				if board[i+1][j] == 0
+					board[a][b] = board[i+1][j] 
 					board[i][j] = 0
-					0 tile = board[a][b]
+					board[a][b] = tile
+					return true
+				else if board[i-1][j] == 0
+					board[a][b] = board[i-1][j]
+					board[i][j] = 0
+					board[a][b] = tile
+					return true
+				else if board[i][j+1] == 0
+					board[a][b] = board[i][j+1]
+					board[i][j] = 0
+					board[a][b] = tile
+					return true
+				else if board[i][j-1] == 0
+					board[a][b] = board[i][j-1]
+					board[i][j] = 0
 					board[a][b] = tile
 					return true
 	return false

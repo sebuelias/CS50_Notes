@@ -205,6 +205,48 @@ void draw(void)
 bool move(int tile)
 {
     // TODO
+    int a;
+    int b;
+    
+    for (int i = 0; i < d; i++)
+    {
+        for (int j = 0; j < d; j++)
+        {
+            if (tile == board[i][j])
+            {
+                a = i;
+                b = j;
+                if (board[i+1][j] == 0)
+                {
+                    board[a][b] = board[i+1][j];
+                    board[i][j] = 0;
+                    board[a][b] = tile;
+                    return true;
+                }
+                else if (board[i-1][j] == 0)
+                {
+                    board[a][b] = board[i-1][j];
+                    board[i][j] = 0;
+                    board[a][b] = tile;
+                    return true;
+                }
+                else if (board[i][j+1] == 0)
+                {
+                    board[a][b] = board[i][j+1];
+                    board[i][j] = 0;
+                    board[a][b] = tile;
+                    return true;
+                }
+                else if (board[i][j-1] == 0)
+                {
+                    board[a][b] = board[i][j-1];
+                    board[i][j] = 0;
+                    board[a][b] = tile;
+                    return true;
+                }
+            }
+        }
+    }
     return false;
 }
 
