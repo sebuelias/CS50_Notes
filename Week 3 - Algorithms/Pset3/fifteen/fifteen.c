@@ -226,7 +226,7 @@ bool move(int tile)
         board[a][b] = 0;
         return true;
     }
-    else if (a-1 >= 0 && board[a+1][b] == 0)
+    else if (a-1 >= 0 && board[a-1][b] == 0)
     {
         board[a-1][b] = board[a][b];
         board[a][b] = 0;
