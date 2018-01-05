@@ -25,31 +25,29 @@
 
 ## move(int tile)
 
+	int a = 0
+	int b = 0;
 	for int i = 0; i < d; i++
 		for int j = 0; j < d; j++
 			if (tile == board[i][j])
-				int a = i
-				int b = j
-				if board[i+1][j] == 0
-					board[a][b] = board[i+1][j] 
-					board[i][j] = 0
-					board[a][b] = tile
-					return true
-				else if board[i-1][j] == 0
-					board[a][b] = board[i-1][j]
-					board[i][j] = 0
-					board[a][b] = tile
-					return true
-				else if board[i][j+1] == 0
-					board[a][b] = board[i][j+1]
-					board[i][j] = 0
-					board[a][b] = tile
-					return true
-				else if board[i][j-1] == 0
-					board[a][b] = board[i][j-1]
-					board[i][j] = 0
-					board[a][b] = tile
-					return true
+				a = i
+				b = j
+	if a+1 < d && board[a+1][b] == 0
+		board[a+1][b] = board[a][b]
+		board[a][b] = 0
+		return true
+	else if a-1 >= 0 && board[a-1][b] == 0
+		board[a-1][b] = board[a][b]
+		board[a][b] = 0
+		return true
+	else if b+1 < d && board[a][b+1] == 0
+		board[a][b+1] = board[a][b]
+		board[a][b] = 0
+		return true
+	else if b-1 >= 0 && board[a][b-1] == 0
+		board[a][b-] = board[a][b]
+		board[a][b] = 0
+		return true
 	return false
 
 
