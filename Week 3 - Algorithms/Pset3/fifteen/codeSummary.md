@@ -53,3 +53,11 @@
 
 ## won()
 
+	counter = 1
+	for i = 0; i < d; i++
+		for j = 0; j < d; j++
+		if board[i][j] == counter
+			counter++
+
+	return false
+		
