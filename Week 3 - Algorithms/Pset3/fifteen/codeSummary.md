@@ -1,6 +1,6 @@
 # Game of Fifteen Pseudocode
 
-## init()
+### init()
 	
 	tile = (d * d) - 1
 	for i = 0; i < d; i ++
@@ -11,7 +11,7 @@
 			board[d-1][d-3] == 1
 
 
-## draw()
+### draw()
 
 	for int i = 0; i < d; i++
 		for int i = 0; i < d; i++
@@ -23,7 +23,7 @@
 
 
 
-## move(int tile)
+### move(int tile)
 
 	int a = 0
 	int b = 0;
@@ -51,7 +51,7 @@
 	return false
 
 
-## won()
+### won()
 
 	counter = 1
 	for i = 0; i < d; i++

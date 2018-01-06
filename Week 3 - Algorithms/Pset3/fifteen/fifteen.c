@@ -156,7 +156,6 @@ void greet(void)
  */
 void init(void)
 {
-    // TODO
     int tile = (d * d) - 1; //tile number starts from highest value
 
     for (int i = 0; i < d; i++)
@@ -165,6 +164,7 @@ void init(void)
         {
             board[i][j] = tile--; //tile decrements for each iteration of 2d array
 
+            //swaps value of last 2 tiles for even numbered grids
             if (d % 2 == 0)
             {
                 board[d-1][d-2] = 2;
@@ -179,16 +179,15 @@ void init(void)
  */
 void draw(void)
 {
-    // TODO
     for (int i = 0; i < d; i++)
     {
         for (int j = 0; j < d; j++)
         {
-            if (board[i][j] > 0)
+            if (board[i][j] > 0) //only prints numbers if tile space isn't 0/blank
             {
                 printf("%2i ", board[i][j]);
             }
-            if (board[i][j] == 0)
+            if (board[i][j] == 0) //prints underscore for blank
             {
                 printf(" _ ");
             }
@@ -204,7 +203,7 @@ void draw(void)
  */
 bool move(int tile)
 {
-    // TODO
+    //tracks tile location for swapping purposes
     int a = 0;
     int b = 0;
 
@@ -220,6 +219,7 @@ bool move(int tile)
         }
     }
 
+    //checks if adjacent tile is blank, swaps if it is
     if (a+1 < d && board[a+1][b] == 0)
     {
         board[a+1][b] = board[a][b];
@@ -254,19 +254,21 @@ bool move(int tile)
  */
 bool won(void)
 {
-    int counter = 1;
+    int counter = 1; //what the board[0][0] value should be
 
     for (int i = 0; i < d; i++)
     {
         for (int j = 0; j < d; j++)
         {
+            //if board value is same as the counter value, increment and keep on checking
             if (board[i][j] == counter)
             {
                 counter++;
             }
         }
     }
-
+    //checks if last value is blank
+    //counter higher by 1 because of last incrementation
     if (counter == (d * d) && board[d-1][d-1] == 0)
     {
         return true;
