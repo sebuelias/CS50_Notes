@@ -254,7 +254,6 @@ bool move(int tile)
  */
 bool won(void)
 {
-    // TODO
     int counter = 1;
 
     for (int i = 0; i < d; i++)
@@ -266,6 +265,11 @@ bool won(void)
                 counter++;
             }
         }
+    }
+
+    if (counter == (d * d) && board[d-1][d-1] == 0)
+    {
+        return true;
     }
     return false;
 }
