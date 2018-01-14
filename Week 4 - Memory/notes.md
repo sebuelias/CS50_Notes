@@ -37,4 +37,10 @@ Two of the most common image file types are bitmaps and jpegs. Bitmap means a ma
 
 JPEGs typically start with the same 3 bytes(255 216 255), but in hexidecimal form. Instead of using a bunch of bits to figure out the color of the pixel, each byte is divided into 4 bits, and those 4 bits have a max value of 16. Instead of using 0s and 1s to represent that 16, 0-9 and a-f are  used.
 
-## Printing to files and Structs
+## Printing to files
+In the previous lessons, the programs printed data to the screen using printf. In this lesson we learned the fprintf command which prints data to a file, that is saves it to a file.
+
+---
+
+###### Struct
+Struct was briefly touched on in this lesson. I wish I took more notes on it, but from my understanding it seems similar to a Class in other programming languages or a Javascript object.
