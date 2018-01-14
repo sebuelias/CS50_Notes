@@ -26,6 +26,8 @@ Memory is made up of different sections, but the two covered in this lesson are 
 Stack is where the functions (including Main) are stored. Stack goes up and disposes of memory.  
 Heap is the section above Stack, it moves downward and allocates memory.
 
+Allocated memory writes from left-to-right and top-to-bottom, going down towards the Stack. If too much memory is written it can write to where certain functions are stored and run those functions. This is how some malicious programs run, they're write down into the Stack and until the reach a certain function, then that function runs. This malicious program runs a function that can delete all your data for example.
+
 Because of their location and their movement towards each other, they can collide, and this collision is known as an Overflow.  
 A Stack Overflow is too much of the Stack being used, and a Heap Overflow is too much of the Heap in use.  
 But a Buffer Overflow refers to any overflow between any sections in memory.
