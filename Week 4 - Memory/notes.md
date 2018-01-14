@@ -15,5 +15,8 @@ In the previous CS50 lessons, the *string* data type was used with the cs50 libr
 ## Overflow
 
 ## Images and Hexidecimal
+Two of the most common image file types are bitmaps and jpegs. Bitmap means a map of all the bits, i.e. it maps a bit to a particular location and displays a particular pixel.
+
+JPEGs typically start with the same 3 bytes(255 216 255), but in hexidecimal form. Instead of using a bunch of bits to figure out the color of the pixel, each byte is divided into 4 bits, and those 4 bits have a max value of 16. Instead of using 0s and 1s to represent that 16, 0-9 and a-f are  used.
 
 ## Printing to files and Structs
