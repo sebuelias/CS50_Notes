@@ -39,28 +39,28 @@ Because of their location and their movement towards each other, they can collid
 A Stack Overflow is too much of the Stack being used, and a Heap Overflow is too much of the Heap in use.  
 A Buffer Overflow refers to an overflow between any sections in memory.
 
-## Images and Hexidecimal
+## Images and Hexadecimal
 Two of the most common image file types are bitmaps and jpegs. Bitmap means a map of all the bits, i.e. it maps a bit to a particular location and displays a particular pixel.
 
-JPEGs typically start with the same 3 bytes(255 216 255), but in hexidecimal form. Instead of using a bunch of bits to figure out the color of the pixel, each byte is divided into 4 bits, and those 4 bits have a max value of 16. Instead of using 0s and 1s to represent that 16, 0-9 and a-f are  used.
+JPEGs typically start with the same 3 bytes(255 216 255), but in hexadecimal form. Instead of using a bunch of bits to figure out the color of the pixel, each byte is divided into 4 bits, and those 4 bits have a max value of 16. Instead of using 0s and 1s to represent that 16, 0-9 and a-f are  used.
 
-### Hexidecimal Breakdown (255 216 255)
-255 is a [magic number](https://github.com/00SaadChaudhry/CS50_Notes/blob/master/Week%202%20-%20Crypto/inDepthNotes.md#magic-numbers) that represents the maximum amount of bits(1111 1111), and the minimum amount of bits is 0 (0000 0000). Instead of writing all that, hexidecimal is used, with a max value of 15(0-indexed). 
+### Hexadecimal Breakdown (255 216 255)
+255 is a [magic number](https://github.com/00SaadChaudhry/CS50_Notes/blob/master/Week%202%20-%20Crypto/inDepthNotes.md#magic-numbers) that represents the maximum amount of bits(1111 1111), and the minimum amount of bits is 0 (0000 0000). Instead of writing all that, hexadecimal is used, with a max value of 15(0-indexed). 
 
-The hexidecimal numbers are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f; with a-f representing 10, 11, 12, 13, 14, 15.
+The hexadecimal numbers are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f; with a-f representing 10, 11, 12, 13, 14, 15.
 
 * 255 has a binary value of 11111111
 	- 11111111 is divided into two 4-bit numbers, 1111 1111
 		+ 1111 1111 has a numerical value of 15 15
-			* 15 15 has a hexidecimal value of f f (represented as 0xff)
+			* 15 15 has a hexadecimal value of f f (represented as 0xff)
 * 216 has a binary value of 11011000
 	- 11011000 is divided into two 4-bit numbers, 1101 1000
 		+ 1101 1000 has a numerical value of 13 8
-			* 13 8 has a hexidecimal value of d 8 (represented as 0xd8)
+			* 13 8 has a hexadecimal value of d 8 (represented as 0xd8)
 * 255 has a binary value of 11111111
 	- 11111111 is divided into two 4-bit numbers, 1111 1111
 		+ 1111 1111 has a numerical value of 15 15
-			* 15 15 has a hexidecimal value of f f (represented as 0xff)
+			* 15 15 has a hexadecimal value of f f (represented as 0xff)
 
 ## Printing to files
 In the previous lessons, the programs printed data to the screen using printf. In this lesson we learned the fprintf command which prints data to a file, that is saves it to a file.
