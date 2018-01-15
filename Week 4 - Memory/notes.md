@@ -17,7 +17,9 @@ To lookup the memory address, the asterisk(*) is used before the variable name. 
 ### Strings and Characters
 In the previous CS50 lessons, the *string* data type was used with the cs50 library, but in reality there aren't any strings in C. A string is a set of char data types ending with sentinel character *\0*. The cs50 library and string data type were implemented in earlier lessons for ease of use.
 
-A string in C is really a char * (*variable*), which is the memory address of the first character ending with a sentinel character. 
+A string in C is really a char * (*variable*), which is the memory address of the first character ending with a sentinel character. The strcmp() method compares the value of two char * variables.
+
+Before we learned about the * referring to the address, a variable assigned to another variable copied the value as well as the memory address, so if one variable was affected so was the other. But using char * and a for loop, different strings can have the same value with different addresses.
 
 
 ### Pointers
