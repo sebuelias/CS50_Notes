@@ -11,11 +11,11 @@ When accessing values, the program doesn't look for the value itself, but rather
 To get around this, the addresses are compared.
 
 ### Memory Address *
-To lookup the memory address, the asterisk(*) is used before the variable name. Now values within addresses can be properly compared. This * just represents the location of the value in memory. 
+To lookup the memory **address**, the asterisk(*) is used before the variable name. Now values within addresses can be properly compared. This * just represents the location of the value in memory. 
 
 
 ### Strings and Characters
-In the previous CS50 lessons, the *string* data type was used with the cs50 library, but in reality there aren't any strings in C. A string is a set of char data types ending with sentinel character *'\0'*. The cs50 library and string data type were implemented in earlier lessons for ease of use.
+In the previous CS50 lessons, the *string* data type was used with the cs50 library, but in reality there aren't any strings in C. A string is a set of char data types ending with sentinel character **'\0'**. The cs50 library and string data type were implemented in earlier lessons for ease of use.
 
 A string in C is really a char * (*variable*), which is the memory address of the first character ending with a sentinel character. The strcmp() method compares the value of two char * variables.
 
@@ -28,7 +28,7 @@ When going under the hood and accessing memory, you can't just assign values to 
 If memory isn't properly allocated, the program can cause memory leaks, which does happen with real-world programs. During a memory leak, that amount of memory is "gone" unless it's released, which is done by rebooting your computer, or (in our case) by running the free() method if a leak is detected.
 
 ## Stack and Heap
-Memory is made up of different sections, but the two covered in this lesson are Stack and Heap. Stack is where functions (including Main) are stored. Functions in Stack are ordered from the outermost scope (Main) being on the bottom, and the innermost being on top of the Stack. Functions that are called by other functions are higher in the Stack. The Stack moves upward and disposes of memory. 
+Memory is made up of different sections, but the two covered in this lesson are **Stack** and **Heap**. Stack is where functions (including Main) are stored. Functions in Stack are ordered from the outermost scope (Main) being on the bottom, and the innermost being on top of the Stack. Functions that are called by other functions are higher in the Stack. The Stack moves upward and disposes of memory. 
 
 Heap is the section above Stack, it moves downward and allocates memory. Allocated memory writes from left-to-right and top-to-bottom, going down towards the Stack. 
 
