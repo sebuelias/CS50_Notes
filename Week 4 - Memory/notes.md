@@ -28,24 +28,43 @@ If memory isn't properly allocated, the program can cause memory leaks, which do
 ## Stack and Heap
 Memory is made up of different sections, but the two covered in this lesson are Stack and Heap. Stack is where functions (including Main) are stored. Functions in Stack are ordered from the most important (Main) being on the bottom, and the least important being on top of the Stack. Functions that are called by other functions are higher in the Stack. The Stack moves upward and disposes of memory. 
 
-Heap is the section above Stack, it moves downward and allocates memory.
+Heap is the section above Stack, it moves downward and allocates memory. Allocated memory writes from left-to-right and top-to-bottom, going down towards the Stack. 
 
 ### Overflow
-Allocated memory writes from left-to-right and top-to-bottom, going down towards the Stack. If too much memory is written it can write to where certain functions are stored and run those functions. This is how some malicious programs run, they write down into the Stack and until they reach a certain function, then that function runs. This function might possibly delete all your data for example.
+If too much memory is written it can write to where certain functions are stored and run those functions. This is how some malicious programs run, they write down into the Stack and until they reach a certain function, then that function runs. This function might possibly delete all your data for example.
 
 Because of their location and their movement towards each other, they can collide, and this collision is known as an Overflow.  
 A Stack Overflow is too much of the Stack being used, and a Heap Overflow is too much of the Heap in use.  
-But a Buffer Overflow refers to any overflow between any sections in memory.
+A Buffer Overflow refers to an overflow between any sections in memory.
 
 ## Images and Hexidecimal
 Two of the most common image file types are bitmaps and jpegs. Bitmap means a map of all the bits, i.e. it maps a bit to a particular location and displays a particular pixel.
 
 JPEGs typically start with the same 3 bytes(255 216 255), but in hexidecimal form. Instead of using a bunch of bits to figure out the color of the pixel, each byte is divided into 4 bits, and those 4 bits have a max value of 16. Instead of using 0s and 1s to represent that 16, 0-9 and a-f are  used.
 
+### Hexidecimal Breakdown (255 216 255)
+255 is a [magic number](https://github.com/00SaadChaudhry/CS50_Notes/blob/master/Week%202%20-%20Crypto/inDepthNotes.md#magic-numbers) that represents the maximum amount of bits(1111 1111), and the minimum amount of bits is 0 (0000 0000). Instead of writing all that, hexidecimal is used, with a max value of 15(index 0). 
+
+The hexidecimal numbers are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f; with a-f representing 10, 11, 12, 13, 14, 15. Here's the best way I can explain binary to hexidecimal
+
+* 255 has a binary value of 11111111
+	- 11111111 is divided into two 4-bit numbers, 1111 1111
+		+ 1111 1111 has a numerical value of 15 15
+			* 15 15 has a hexidecimal value of f f (represented as 0xff)
+* 216 has a binary value of 11011000
+	- 11011000 is divided into two 4-bit numbers, 1101 1000
+		+ 1101 1000 has a numerical value of 13 8
+			* 13 8 has a hexidecimal value of d 8 (represented as 0xd8)
+* 255 has a binary value of 11111111
+	- 11111111 is divided into two 4-bit numbers, 1111 1111
+		+ 1111 1111 has a numerical value of 15 15
+			* 15 15 has a hexidecimal value of f f (represented as 0xff)
+
 ## Printing to files
 In the previous lessons, the programs printed data to the screen using printf. In this lesson we learned the fprintf command which prints data to a file, that is saves it to a file.
 
----
 
 ###### Struct
 Struct was briefly touched on in this lesson. I wish I took more notes on it, but from my understanding it seems similar to a Class in other programming languages or a Javascript object.
+
+In the example he created a Struct known as Student, saved in its own file, and that Struct had a Student Name and Student Dorm. A program runs that struct and fprints 3 students to another file.
