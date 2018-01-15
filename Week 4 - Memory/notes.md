@@ -1,5 +1,10 @@
 # CS50 Week 4 - Memory
 
+## C Under The Hood
+In the previous lessons, **Syntactic Sugar** was used to make the code easier to read for humans. We didn't see what was happening under the hood because we were still learning programming and programming concepts. But in this lesson we dive into that, and **Memory** is the topic covered.
+
+While it's still possible to write code using the Syntactic Sugar, knowing what really occurs makes the program easier to understand. We can avoid errors, bugs, unexpected results, and even worse when we know what's really going on.
+
 ## Values in Memory
 When accessing values, the program doesn't look for the value itself but instead where it's stored in memory. If you're comparing two of the exact same strings, but they're assigned to different variables, C is looking for their location in memory. This location is called the address, and because the variables are different the address is also different — C stores them in different parts of the memory. That's why you can't directly compare string a to string b.
 
@@ -20,11 +25,12 @@ When going under the hood and accessing memory, you can't just assign values to 
 
 If memory isn't properly allocated, the program can cause memory leaks, which does happen with real-world programs. During a memory leak, that amount of memory is "gone" unless it's released, which is done by rebooting your computer, or (in our case) by running the free() method if a leak is detected.
 
-## Overflow
-Memory is made up of different sections, but the two covered in this lesson are Stack and Heap.  
-Stack is where the functions (including Main) are stored. Stack goes up and disposes of memory.  
+## Stack and Heap
+Memory is made up of different sections, but the two covered in this lesson are Stack and Heap. Stack is where functions (including Main) are stored. Functions in Stack are ordered from the most important (Main) being on the bottom, and the least important being on top of the Stack. Functions that are called by other functions are higher in the Stack. The Stack moves upward and disposes of memory. 
+
 Heap is the section above Stack, it moves downward and allocates memory.
 
+### Overflow
 Allocated memory writes from left-to-right and top-to-bottom, going down towards the Stack. If too much memory is written it can write to where certain functions are stored and run those functions. This is how some malicious programs run, they write down into the Stack and until they reach a certain function, then that function runs. This function might possibly delete all your data for example.
 
 Because of their location and their movement towards each other, they can collide, and this collision is known as an Overflow.  
