@@ -105,3 +105,11 @@ This can be written as a recursive function, and it can be written with the curl
     
 Recursive functions replace loops. The base case occurs when the function finally hits factorial of 1, the function is over. The recursive case makes the function slightly smaller each time it runs.
 
+## Call Stack
+When a function is called, the system sets aside space in memory for it. These memory chunks are known as stack frames or function frames, and they live on the Stack.
+
+Multiple frames can exist at a time, these are known as Open Frames; but only one Active Frame can exist a time, the Active Frame is on top of the stack and the function currently running.
+
+When a new function is called, it goes to the top of the stack. Only the function in the Active Frame is doing any work. The function below it needs to wait. When the function in the Active Frame is finished it pops off the stack, and the Open Frame function below is pushed to the Active Frame.
+
+The Open Frame functions are waiting for the Active Frame function at the top of the stack to finish.
