@@ -79,3 +79,29 @@ Structs can be dynamically allocated, but pointer needs to dereference to the st
 ## Defining Custom Types
 Existing data-types, such as a char, can be aliased with the typedef keyword. In the previous lessons this was done with typedef char* string so string is an alias for the char*, in the cs50 library.  
 It can also be done with structs struct mycar{...} car_t.
+
+## Recursion
+Recursion is when a function calls itself as part of its execution.
+
+Recursive functions have a base case and a recursive case, and they can have multiple of each case. The base case is what terminates the function process when triggered, it's a simple solution that stops the function. The recursive case is when the function calls itself, but with a slight alteration to make itself smaller
+
+One example of this is a factorial, which multiplies all the integers in positive integer to each other. A factorial of 5 would be 5x4x3x2x1 = 120.
+
+* factorial(1) = 1
+* factorial(2) = 2 * factorial(1)
+* factorial(1) = 3 * factorial(2)
+* factorial(1) = 4 * factorial(3)
+* factorial(1) = 5 * factorial(4)
+
+This can be written as a recursive function, and it can be written with the curly brackets removed for single-line if/else statements
+
+    int fact(int n)
+    {
+    	if (n == 1) //base case
+    		return 1;
+		else //recursive case
+			return n * fact(n-1);
+    }
+    
+Recursive functions replace loops. The base case occurs when the function finally hits factorial of 1, the function is over. The recursive case makes the function slightly smaller each time it runs.
+
