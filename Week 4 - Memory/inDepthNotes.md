@@ -113,3 +113,48 @@ Multiple frames can exist at a time, these are known as Open Frames; but only on
 When a new function is called, it goes to the top of the stack. Only the function in the Active Frame is doing any work. The function below it needs to wait. When the function in the Active Frame is finished it pops off the stack, and the Open Frame function below is pushed to the Active Frame.
 
 The Open Frame functions are waiting for the Active Frame function at the top of the stack to finish.
+
+## File Pointers
+FILE* is a pointer to a file. These files store data for read and write purposes. Files contain persistent data, which is data that still exists after the program ends. 
+
+File manipulation methods exist in the stdio library. Each method, except fopen() requires an argument, fopen() gets the file pointer.
+
+### fopen()
+Opens the file and gives it a file pointer. This pointer will be used as an argument in other file methods. After an fopen() call, make sure the pointer isn't set to NULL.
+	
+	FILE *file_var = fopen("filename", "r/w/a") //either r or w or a
+r is for read, so the file is read-only  
+w is for write, write-only which overwrites any data in file
+a is for append, to append data to end of file
+
+### fclose()
+This method closes the files
+
+	fclose(*file_var)
+Once a file is closed, no other file methods can be applied to it (except fopen)
+
+### fgetc()
+This gets the next character of the file and stores it in a variable, but the fopen must have a "r" designation. It reads content from the file pointer
+
+	char f_char_get = fgetc(*file_var)
+	
+A while loop that ends when the EOF(End-Of-File) is detected can be used to print every character of the file to the screen. This is similar to the CAT command in terminal.
+
+### fputc()
+Similar to fget, but requires fopen have a "w" or "a" designation. It instead writes from the file pointer
+
+	char f_char_put = fputc(*file_var)
+	
+With a while loop this can copy the file contents into another file, similar to the CP terminal command.
+
+### fread()
+Similar to fgetc, but can be used for more than just one character, and file is usually stored in an array. Also requires an "r" designation.
+
+	int arr[10];
+	fread(arr, sizeof(int), 10, *file_var)
+
+### fwrite()
+Similar to fread(), but requires a "w" or "a" designation, as it writes to the file pointer.
+
+	int arr[10];
+	fwrite(arr, sizeof(int), 10, *file_var)
