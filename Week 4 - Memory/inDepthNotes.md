@@ -58,3 +58,19 @@ Here's how the **malloc** method does dynamic allocation:
 * For an array, it's (x * sizeof(data))
 
 Dynamically allocated memory isn't automatically returned, which can result in a memory leak. The free(variable) method releases the memory. Every block allocated with malloc() must be free() before the program ends. Free() should only run on malloc() allocated blocks. And free() shouldn't run more than once on those blocks.
+
+
+## Structures
+Structures are variables of separate data-types that can be unified into a new type with their own custom type name. They make it so elements of different types can be grouped together, and they act as a super-variable. A car struct, for example, can have a char data type and an int data type.
+
+These structs are defined at the top of the program, in the global scope, or separate h files with the #include at the top of the main program. To access data within a struct, the **.** operator accesses the structure field. 
+
+* Struct car is created, with the int year data-type
+* Struct car mycar is created, a mycar variable made from the car struct
+* mycar.year = 2011; accesses the year field
+
+Structs can be dynamically allocated, but pointer needs to dereference to the struct
+
+* struct car *mycar = malloc(sizeof(car))
+* (*mycar).year = 2011;
+* **OR** it can be done with mycar->year = 2011, the **->** dereferences the pointer and accesses the field
