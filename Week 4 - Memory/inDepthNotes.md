@@ -44,3 +44,17 @@ These addresses have hexadecimal locations, and each pointer is just an address(
 All pointers should be set to something, and if a pointer can't immediately be set to anything it should be set to NULL. This is important because a pointer set to NULL throws a Segmentation Fault when dereferenced, which defends against accidental manipulation. Dereferencing is changing the actual memory data.
 
 In past lessons we saw how to initialize multiple variables on the same line with int a, b, c...etc; To do this with a pointer, the syntax is int *a *b, *c, *d...etc.
+
+## Dynamic Memory Allocation
+Pointers can dynamically access memory as its running.
+
+In **MOST** situations, variables with names are on the Stack and variables without names are on the Heap. because of this Dynamic Memory Allocation process. When the Heap or Stack collide into each other, the program can run out of memory.
+
+Here's how the **malloc** method does dynamic allocation:
+
+* It goes through the Heap and returns a Pointer
+* If no memory is available, the Pointer is NULL (Segmentation Fault)
+* data-type *variable_name = malloc(sizeof(datatype)) dynamically allocates memory
+* For an array, it's (x * sizeof(data))
+
+Dynamically allocated memory isn't automatically returned, which can result in a memory leak. The free(variable) method releases the memory. Every block allocated with malloc() must be free() before the program ends. Free() should only run on malloc() allocated blocks. And free() shouldn't run more than once on those blocks.
