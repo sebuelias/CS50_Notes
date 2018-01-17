@@ -35,3 +35,12 @@ Memory addresses are represented as hexadecimal numbers. I've also noticed that 
 
 
 ## Pointers
+Pointers are an alternative way to pass data between functions. They're based by the actual variable instead of a copy. When int a = int b, a gets a copy of the b variable, but int *a = int *b, *a gets the actual data of *b.
+
+Data is stored on a hard disk (or solid-state-drive), but nothing can be done with this data. It needs to be moved into memory (RAM, Random Access Memory) to make it usable. Any data on memory is temporary, it's gone if the program free()'s it or the machine shuts down. Memory is finite, and whenever a data type is declared some memory is used. Memory acts similar to an array, meaning it's indexed and can be accessed, but any location (address) on memory can be independently accessed. This is known as Random Access.
+
+These addresses have hexadecimal locations, and each pointer is just an address(pointers are declared with the *). To access a pointer, the & is used. The pointer value is the memory address, and the type is the data at the address. These pointers allow us to manipulate real data instead of the copies, which is what we did in previous lessons.
+
+All pointers should be set to something, and if a pointer can't immediately be set to anything it should be set to NULL. This is important because a pointer set to NULL throws a Segmentation Fault when dereferenced, which defends against accidental manipulation. Dereferencing is changing the actual memory data.
+
+In past lessons we saw how to initialize multiple variables on the same line with int a, b, c...etc; To do this with a pointer, the syntax is int *a *b, *c, *d...etc.
