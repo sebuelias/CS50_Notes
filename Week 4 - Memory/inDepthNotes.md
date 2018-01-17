@@ -74,3 +74,9 @@ Structs can be dynamically allocated, but pointer needs to dereference to the st
 * struct car *mycar = malloc(sizeof(car))
 * (*mycar).year = 2011;
 * **OR** it can be done with mycar->year = 2011, the **->** dereferences the pointer and accesses the field
+
+
+## Defining Custom Types
+Existing data-types, such as a char, can be aliased with the typedef keyword. In the previous lessons this was done with typedef char* string so string is an alias for the char*, in the cs50 library.  
+It can also be done with structs struct mycar{...} car_t.
+
