@@ -1,7 +1,7 @@
 # In Depth Notes about Memory
 
 ## Hexadecimal
-Decimal numbers 0-9 are known as base-10, these are the numbers we see all the time with ones, tens, hundreds...etc places we're used to. Binary numbers are base-2, 0s and 1s, and they go from right to left from 0,1,2,4,16,32...etc. Computers deal with binary.
+Decimal numbers 0-9 are known as base-10, these are the numbers we see all the time with ones, tens, hundreds...etc places we're used to. Binary numbers are base-2, 0s and 1s, and they go from right to left from 0,1,2,4,8,16,32...etc. Computers deal with binary.
 
 Hexadecimal is base-16. These numbers go from 0-9 and A-F, with A-F representing 10-15. Each hexadecimal number represents 4 bits, and you'll notice that the largest value F(15) equals 1111, which is also the highest 4-bit value. **0x** is prefixed in front of a hexadecimal numbers to avoid confusion.
 
