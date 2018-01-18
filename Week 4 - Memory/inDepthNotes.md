@@ -35,22 +35,21 @@ Memory addresses are represented as hexadecimal numbers. I've also noticed that 
 
 
 ## Pointers
-Pointers are an alternative way to pass data between functions. They're based by the actual variable instead of a copy. When int a = int b, a gets a copy of the b variable, but int *a = int *b, *a gets the actual data of *b.
+Pointers are an alternative way to pass data between functions. They're based by the actual variable instead of a copy. When int a = int b, a gets a copy of the b variable, but int *a = int &b, *a gets the actual data of &b.
 
-Data is stored on a hard disk (or solid-state-drive), but nothing can be done with this data. It needs to be moved into memory (RAM, Random Access Memory) to make it usable. Any data on memory is temporary, it's gone if the program free()'s it or the machine shuts down. Memory is finite, and whenever a data type is declared some memory is used. Memory acts similar to an array, meaning it's indexed and can be accessed, but any location (address) on memory can be independently accessed. This is known as Random Access.
+Data is stored on a hard disk (or solid-state-drive), but nothing can be done with this data. It needs to be moved into memory (RAM, Random Access Memory) to make it usable. Any data on memory is temporary, it's gone if the program free()'s it or the machine shuts down. Memory is finite, and whenever a data type is declared some memory is used. Memory acts similar to an array, meaning it's indexed and can be accessed, but any location (address) on memory can be independently accessed. This is known as **Random Access**.
 
-These addresses have hexadecimal locations, and each pointer is just an address(pointers are declared with the *). To access a pointer, the & is used. The pointer value is the memory address, and the type is the data at the address. These pointers allow us to manipulate real data instead of the copies, which is what we did in previous lessons.
+These addresses have hexadecimal locations, and each pointer is just an address(pointers are declared with the *). To access a pointer, the & is used. The pointer value is the memory address, and the type is the data at the address. These pointers allow us to manipulate real data instead of copies.
 
-All pointers should be set to something, and if a pointer can't immediately be set to anything it should be set to NULL. This is important because a pointer set to NULL throws a Segmentation Fault when dereferenced, which defends against accidental manipulation. Dereferencing is changing the actual memory data.
+All pointers should be set to something, and if a pointer can't immediately be set to anything it should be set to *NULL*. This is important because a pointer set to NULL throws a Segmentation Fault when dereferenced, which defends against accidental manipulation. Dereferencing is changing the actual memory data.
 
-In past lessons we saw how to initialize multiple variables on the same line with int a, b, c...etc; To do this with a pointer, the syntax is int *a *b, *c, *d...etc.
 
 ## Dynamic Memory Allocation
 Pointers can dynamically access memory as its running.
 
-In **MOST** situations, variables with names are on the Stack and variables without names are on the Heap. because of this Dynamic Memory Allocation process. When the Heap or Stack collide into each other, the program can run out of memory.
+In **MOST** situations, variables with names are on the [Stack and variables without names are on the Heap](https://github.com/00SaadChaudhry/CS50_Notes/blob/master/Week%204%20-%20Memory/notes.md#stack-and-heap). because of this Dynamic Memory Allocation process. When the Heap or Stack collide into each other, the program can run out of memory.
 
-Here's how the **malloc** method does dynamic allocation:
+Here's how the **malloc()** method does dynamic allocation:
 
 * It goes through the Heap and returns a Pointer
 * If no memory is available, the Pointer is NULL (Segmentation Fault)
@@ -61,9 +60,9 @@ Dynamically allocated memory isn't automatically returned, which can result in a
 
 
 ## Structures
-Structures are variables of separate data-types that can be unified into a new type with their own custom type name. They make it so elements of different types can be grouped together, and they act as a super-variable. A car struct, for example, can have a char data type and an int data type.
+Structures are variables of separate data-types that can be unified into a new type with their own custom type name. They make it so elements of different types can be grouped together, and they act as a super-variable. A car struct, for example, can have a char data type and an int data type within it.
 
-These structs are defined at the top of the program, in the global scope, or separate h files with the #include at the top of the main program. To access data within a struct, the **.** operator accesses the structure field. 
+These structs are defined at the top of the program, or in separate h files with the #include at the top of the main program. To access data within a struct, the **.** operator accesses the structure field. 
 
 * Struct car is created, with the int year data-type
 * Struct car mycar is created, a mycar variable made from the car struct
@@ -73,19 +72,20 @@ Structs can be dynamically allocated, but pointer needs to dereference to the st
 
 * struct car *mycar = malloc(sizeof(car))
 * (*mycar).year = 2011;
-* **OR** it can be done with mycar->year = 2011, the **->** dereferences the pointer and accesses the field
+* **OR** it can be done with mycar->year = 2011  
+the **->** dereferences the pointer and accesses the field
 
 
 ## Defining Custom Types
-Existing data-types, such as a char, can be aliased with the typedef keyword. In the previous lessons this was done with typedef char* string so string is an alias for the char*, in the cs50 library.  
-It can also be done with structs struct mycar{...} car_t.
+Existing data-types, such as a char, can be aliased with the typedef keyword. In the previous lessons this was done with **typedef char* string** so string is an alias for the char*, in the cs50 library.  
+It can also be done with structs, struct mycar{...} car_t.
 
 ## Recursion
 Recursion is when a function calls itself as part of its execution.
 
 Recursive functions have a base case and a recursive case, and they can have multiple of each case. The base case is what terminates the function process when triggered, it's a simple solution that stops the function. The recursive case is when the function calls itself, but with a slight alteration to make itself smaller
 
-One example of this is a factorial, which multiplies all the integers in positive integer to each other. A factorial of 5 would be 5x4x3x2x1 = 120.
+One example of this is a factorial, which multiplies all the integers in a positive integer to each other. A factorial of 5 would be 5x4x3x2x1 = 120.
 
 * factorial(1) = 1
 * factorial(2) = 2 * factorial(1)
@@ -106,9 +106,9 @@ This can be written as a recursive function, and it can be written with the curl
 Recursive functions replace loops. The base case occurs when the function finally hits factorial of 1, the function is over. The recursive case makes the function slightly smaller each time it runs.
 
 ## Call Stack
-When a function is called, the system sets aside space in memory for it. These memory chunks are known as stack frames or function frames, and they live on the Stack.
+When a function is called, the system sets aside space in memory for it. These memory chunks are known as **Stack Frames** or **Function Frames**, and they live on the Stack.
 
-Multiple frames can exist at a time, these are known as Open Frames; but only one Active Frame can exist a time, the Active Frame is on top of the stack and the function currently running.
+Multiple frames can exist at a time, these are known as **Open Frames**; but only one Active Frame can exist at a time, the Active Frame is on top of the stack and the function currently running.
 
 When a new function is called, it goes to the top of the stack. Only the function in the Active Frame is doing any work. The function below it needs to wait. When the function in the Active Frame is finished it pops off the stack, and the Open Frame function below is pushed to the Active Frame.
 
@@ -117,21 +117,19 @@ The Open Frame functions are waiting for the Active Frame function at the top of
 ## File Pointers
 FILE* is a pointer to a file. These files store data for read and write purposes. Files contain persistent data, which is data that still exists after the program ends. 
 
-File manipulation methods exist in the stdio library. Each method, except fopen() requires an argument, fopen() gets the file pointer.
-
 ### fopen()
 Opens the file and gives it a file pointer. This pointer will be used as an argument in other file methods. After an fopen() call, make sure the pointer isn't set to NULL.
 	
 	FILE *file_var = fopen("filename", "r/w/a") //either r or w or a
 r is for read, so the file is read-only  
-w is for write, write-only which overwrites any data in file
-a is for append, to append data to end of file
+w is for write, write-only which overwrites all data in the file  
+a is for append, to append data to the end of the file
 
 ### fclose()
 This method closes the files
 
 	fclose(*file_var)
-Once a file is closed, no other file methods can be applied to it (except fopen)
+Once a file is closed, no other file methods can be applied (except fopen)
 
 ### fgetc()
 This gets the next character of the file and stores it in a variable, but the fopen must have a "r" designation. It reads content from the file pointer
@@ -141,7 +139,7 @@ This gets the next character of the file and stores it in a variable, but the fo
 A while loop that ends when the EOF(End-Of-File) is detected can be used to print every character of the file to the screen. This is similar to the CAT command in terminal.
 
 ### fputc()
-Similar to fget, but requires fopen have a "w" or "a" designation. It instead writes from the file pointer
+Similar to fget, but requires fopen to have a "w" or "a" designation. It instead writes from the file pointer
 
 	char f_char_put = fputc(*file_var)
 	
